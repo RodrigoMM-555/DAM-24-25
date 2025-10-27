@@ -21,6 +21,5 @@ boton.pack(padx=10,pady=10)
 resultado = tk.Label(text="Aqui va el resultado")
 resultado.pack(padx=10,pady=10)
 
-
 ventana.mainloop()
 

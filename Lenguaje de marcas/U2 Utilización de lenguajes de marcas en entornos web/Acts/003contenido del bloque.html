@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang = "es">
+    <head>
+        <title>Rodrigo Menendez Molina</title>
+        <meta charset="utf-8">
+
+        <!--Etiquetas de posicionamiento-->
+        <meta name="description" content="Web de Rodrigo Menendez Molina, algo profesional">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">                  <!--Para que se vea bien en otras pantallas (mobiles,tablets...)-->
+        <meta name="keywords" content="estudiante,programador,jugador...">                      <!--De más a menos importante-->
+        <meta name="author" content=">Rodrigo">                                                 <!--Como tu firma para seguir todas tus paginas-->
+        <link rel="icon" href="Pinguistola.jpg" type="image/jpeg">                              <!--Imagen de la pestaña de arriba-->
+
+        <meta property="og:title" content="Rodrigo Menenedez Molina">                           <!--Titulo que se muestra al compartir la pagina, por ejemplo en redes sociales-->
+        <meta property="og:description" content="Web de Rodrigo Menendez Molina">               <!--Descripcion que sale al compartir la pagina en redes por ejemplo-->
+        <meta property="og:image" content="Pinguistola.jpg">                                   <!--Imagen que se comparte-->
+        <meta property="og:url" content="https://inserta-la-url">                               <!--url que lleva a la pagina compartida-->
+        <meta property="og:type" content="website">                                             <!--?-->
+    </head>
+
+    <body>
+        <header>
+            <!--Esto es la cabecera de la pagina-->>
+            <h1>Rodrigo Menendez Molina</h1>                                <!--Hay hasta h6-->
+            <h2>Estudiante, jugador, programador</h2>
+        </header>
+
+        <main>
+            <!--Esto es el contenido principal-->
+            <section id="inicio">                                           <!--Cada elemto del navegador tiene que tener su seccion-->
+                <h3>Incio</h3>                                              <!--Aqui es a donde nos direccionara el menu de antes-->
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit mauris.</p>
+                <img src="Pinguistola.jpg" alt="Pingüistola"></img>         <!--Esto es para que salga una imagen alojada en la carpeta raiz y  el alt sera texto que saldra si no carga la imagen-->
+            </section>
+            
+
+            <section id="sobre mi">                                         <!--El href dentro del a(ancla) coincide con la id de la seccion, menos por la almoadilla-->
+                <h3>Sobre mi</h3>
+                <p>                        <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit egestas nullam inceptos dignissim vitae, eget pulvinar vivamus magna libero. Bibendum laoreet imperdiet montes lobortis torquent eros maecenas ridiculus volutpat congue, ultrices placerat ut ac hendrerit mi vestibulum praesent at consequat turpis, natoque magnis molestie convallis tincidunt platea primis eleifend dui.</p>            </p>
+            </section>
+            
+
+            <section id="proyectos">
+                <h3>Proyectos</h3>
+                <div id="portafolio">                           <!--Se puede usar <div> pese a estar anticuado, se recomienda no abusar y usar otras etiquetas-->
+                    <article>
+                        <h4>Elementos del portafolio</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit egestas nullam inceptos dignissim vitae, eget pulvinar vivamus magna libero. Bibendum laoreet imperdiet montes lobortis torquent eros maecenas ridiculus volutpat congue, ultrices placerat ut ac hendrerit mi vestibulum praesent at consequat turpis, natoque magnis molestie convallis tincidunt platea primis eleifend dui.</p>
+                        <img src="Pingu.jpg">
+                    </article>
+                </div>                                          <!--El iframe es una linea de codigo copiada que muestra un mapa de google-->
+            </section>
+            
+            <section id="contacto">
+                <h3>Contacto</h3>
+                <form>
+                    <label for="nombre">Introduce tu nombre</label>         <!--Con esto se crea un cuestionario-->
+                    <input type="text" id="nombre">
+                    <p> </p>
+                    <label for="email">Introduce tu email</label>           <!--label es como para escribir la pregunta-->
+                    <input type="email" id="email"></label>                 <!--input es para crear un recuadro donde responder-->
+                    <p> </p>
+                    <label for="mensaje">Introduce tu mensaje</label>
+                    <textarea id="mensaje"></textarea>                      <!--El textarea peromite crear un area de texto menos restrictiva que los inputs-->
+                    <input type="submit">
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <!--Esto es el pie de pagina-->
+            <a href="https://github.com/RodrigoMM-555">github</a>
+        </footer>
+    </body>
+</html>

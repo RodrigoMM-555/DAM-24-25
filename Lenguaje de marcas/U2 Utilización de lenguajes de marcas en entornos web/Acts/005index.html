@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang = "es">
+    <head>
+        <title>Rodrigo Menendez Molina</title>
+        <meta charset="utf-8">
+
+        <!--Etiquetas de posicionamiento-->
+        <meta name="description" content="Web de Rodrigo Menendez Molina, algo profesional">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">                  <!--Para que se vea bien en otras pantallas (mobiles,tablets...)-->
+        <meta name="keywords" content="estudiante,programador,jugador...">                      <!--De más a menos importante-->
+        <meta name="author" content=">Rodrigo">                                                 <!--Como tu firma para seguir todas tus paginas-->
+        <link rel="icon" href="Pinguistola.jpg" type="image/jpeg">                              <!--Imagen de la pestaña de arriba-->
+
+        <meta property="og:title" content="Rodrigo Menenedez Molina">                           <!--Titulo que se muestra al compartir la pagina, por ejemplo en redes sociales-->
+        <meta property="og:description" content="Web de Rodrigo Menendez Molina">               <!--Descripcion que sale al compartir la pagina en redes por ejemplo-->
+        <meta property="og:image" content="Pinguistola.jpg">                                   <!--Imagen que se comparte-->
+        <meta property="og:url" content="https://inserta-la-url">                               <!--url que lleva a la pagina compartida-->
+        <meta property="og:type" content="website">                                             <!--?-->
+        
+        <!--<link rel="stylesheet" href="style.css">                        Este es el css externo el mas recomendable, pero usaremos los otros internos porque es mas rapido-->
+        <!--Estilos, esto esta escrito en otro lenguaje, css-->
+        <style>
+            /*
+            selector{              Esto es un comentario con pseudocodigo para ver la estructura
+            atributo:valor;
+            atributo:valor;
+            atributo:valor;
+            ...
+            }
+            */
+            @font-face {
+                font-family:"pixel";                      /*Nombre que le ponemos a la fuente en el codigo*/
+                src:url(Daydream.otf);                    /*Forma de invocar a la fuente si esta descrgada. Para sacarala de internet hay que poner la url completa*/
+            }
+            h1,h2,h3{                                     /*Esto solo aplica a los titulos h1 h2 y h3*/
+                color:turquoise;                        /*Esto ya es codigo de css interno, medianamete recomendable, se prefiere el externo*/
+                font-family:"pixel";                      /*Estos son los tipos de fuente de la libreria, self, sand self, fantasy...*/
+            }
+            body{                                         /*Esto afectara a toda la pagina si no esta afectado ams arriba, creo*/
+                background:rgb(220, 238, 236);                  /*Esto es para el color del fondo*/
+                font-family:monospace;                    /*Esto es una fuente descargada. Las fuentes descargadas deben ser archivos ttf o otf o similares*/
+            }
+            header,main{
+                width:600px;                /*Anchura de los elementos. LaRegilla720 reglas para pantallas*/
+                background:white;         /*Fondo de los elementos*/
+                margin:auto;                /*Centrado en pantalla*/
+                padding:20px;               /*Un poco de margen vertical interiro*/
+            }
+            footer{
+                width:620px;
+                background: rgb(219, 218, 218);
+                margin: auto;
+                padding: 10px;
+            }
+
+            /*Combertir la lista de subrayado con enlace en texto normal*/
+            nav ul{
+                list-style-type: none;      /*Anula los estilos de lista*/
+                margin: 0px;                /*Anula el margen exterior por defecto*/
+                padding: 0px;               /*Anula el margen interior por defecto*/
+                display: flex;              /*Esto lo pone en linea en vez de en lista vertical*/
+                justify-content: center;    /*Esto lo centra, hay mas modos que se pueden ver en flexbox.jocarsa.com*/
+                gap: 1px                   /*Distancia entre los elementos de la lista en horizontal*/
+            }
+            nav ul li a{
+                text-decoration: none;              /*Anula los estilos de subrayado*/
+                color: white;                     /*Color de la letra blanco*/
+                background-color: turquoise;      /*El fondo de la letra turquesa*/
+                padding: 5px;                       /*MArgen interno*/
+                font-size: 15px;                     /*Tamaño de la fuente*/
+                text-transform:uppercase;            /* Texto va en mayusculas */
+                display:block;                      /* Permito a los elementos que sean bloques */
+                width:80px;                         /* Su anchura es de 60 pixeles */
+                text-align:center;                  /* Alineo el texto al centro */
+            }
+
+             /*Con esto evitamos ques imagenes se salgan, asi no hya que poner los px manualmente*/
+            #inicio img{
+                width: 100%;
+            }
+            #portafolio img{
+                width: 100%;
+            }
+
+            /*Esto se aplicara a las secciones que sean de clase bloque <div class=".bloque>*/
+            .bloque{
+                display: flex;
+                gap: 20px;
+            }
+            .bloque img{
+                flex: 1;
+                width: 50%;
+                height: 50%;
+            }
+            .bloque p{
+                flex: 1;
+                font-size: 13px;
+                text-align: justify;
+            }
+            #desarrollo .bloque{
+                flex-direction: row-reverse;    /*Orden invertido*/
+            }
+            #sobre_mi .bloque{
+                flex-direction: row-reverse;    /*Orden invertido*/
+            }
+
+            #contenedor_portafolio{
+                display:grid;                               /*Este elemento es una red*/
+                grid-template-columns: auto auto auto;      /*La red tiene res columans*/
+                gap: 20px;
+            }
+            #contenedor_portafolio img{
+                width: 100%;
+            }
+            form{
+                display: flex;              /*Formulario en modo flex*/
+                flex-direction: column;     /*En una columna*/
+            }
+        </style>
+
+    </head>
+
+
+
+    <body>
+        <header>
+            <!--Esto es la cabecera de la pagina-->>
+            <h1>Rodrigo Menendez Molina</h1>            <!--Hay hasta h6-->   <!--<h1 style="color:red>Hola</h1>El css en linea no es recomendado, peo lo usaremos por conveniencia en calse-->
+            <h2>Estudiante, jugador y programador</h2>
+
+            <nav>                                                           <!--Esto es un menu de navegacion, no siempre tiene que ir en la cabecera, pero es costumbre-->
+                <ul>                                                        <!--ul e spara una lista-->
+                    <li><a href="#inicio">Inicio</a></li>                   <!--li es para un elemento libre de la lista-->
+                    <li><a href="#sobre_mi">Sobre mi</a></li>
+                    <li><a href="#estudios">Estudios</a></li>
+                    <li><a href="#desarrollo">Desarrollo</a></li>
+                    <li><a href="#diseño">Diseño</a></li>
+                    <li><a href="#portafolio">portafolio</a></li>             <!--El a herf= es lo que nos vincula con las secciones de abajo-->
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+        <main>
+            <!--Esto es el contenido principal-->
+            <section id="inicio">                                           <!--Cada elemto del navegador tiene que tener su seccion-->
+                <h3>Incio</h3>                                              <!--Aqui es a donde nos direccionara el menu de antes-->
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit mauris.</p>
+                <img src="imagenes/Pinguistola.jpg" alt="Pingüistola"></img>         <!--Esto es para que salga una imagen alojada en la carpeta raiz y  el alt sera texto que saldra si no carga la imagen-->
+            </section>
+            
+
+            <section id="sobre_mi">                                         <!--El href dentro del a(ancla) coincide con la id de la seccion, menos por la almoadilla-->
+                <h3>Sobre mi</h3>
+                <div class="bloque">
+                    <img src="imagenes/Pingu.jpg" alt="pingu">
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit egestas nullam inceptos dignissim vitae, eget pulvinar vivamus magna libero. Bibendum laoreet imperdiet montes lobortis torquent eros maecenas ridiculus volutpat congue, ultrices placerat ut ac hendrerit mi vestibulum praesent at consequat turpis, natoque magnis molestie convallis tincidunt platea primis eleifend dui.</p>
+                </div>
+            </section>
+
+            <section id="estudios">
+                <h3>Estudios</h3>
+                <div class="bloque">
+                    <img src="imagenes/Pingu.jpg" alt="pingu">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </section>
+
+            <section id="desarrollo">
+                <h3>Desarrollo</h3>
+                <div class="bloque">
+                    <img src="imagenes/Pingu.jpg" alt="pingu">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </section>
+
+            <section id="diseño">
+                <h3>Diseño</h3>
+                <div class="bloque">
+                    <img src="imagenes/Pingu.jpg" alt="pingu">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </section>
+
+            <section id="portafolio">
+                <h3>portafolio</h3>
+                <div id="contenedor_portafolio">                           <!--Se puede usar <div> pese a estar anticuado, se recomienda no abusar y usar otras etiquetas-->
+                    <article>
+                        <h4>Elemento del portafolio 1</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit egestas nullam inceptos dignissim vitae, eget pulvinar vivamus magna libero. Bibendum laoreet imperdiet montes lobortis torquent eros maecenas ridiculus volutpat congue, ultrices placerat ut ac hendrerit mi vestibulum praesent at consequat turpis, natoque magnis molestie convallis tincidunt platea primis eleifend dui.</p>
+                        <img src="imagenes/pingutrabajando.jpg" alt="en proceso">
+                    </article>
+
+                    <article>
+                        <h4>Elemento del portafolio 2</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit egestas nullam inceptos dignissim vitae, eget pulvinar vivamus magna libero. Bibendum laoreet imperdiet montes lobortis torquent eros maecenas ridiculus volutpat congue, ultrices placerat ut ac hendrerit mi vestibulum praesent at consequat turpis, natoque magnis molestie convallis tincidunt platea primis eleifend dui.</p>
+                        <img src="imagenes/pingutrabajando.jpg" alt="en proceso">
+                    </article>
+
+                    <article>
+                        <h4>Elemento del portafolio 3</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit egestas nullam inceptos dignissim vitae, eget pulvinar vivamus magna libero. Bibendum laoreet imperdiet montes lobortis torquent eros maecenas ridiculus volutpat congue, ultrices placerat ut ac hendrerit mi vestibulum praesent at consequat turpis, natoque magnis molestie convallis tincidunt platea primis eleifend dui.</p>
+                        <img src="imagenes/pingutrabajando.jpg" alt="en proceso">
+                    </article>
+                </div>                                          <!--El iframe es una linea de codigo copiada que muestra un mapa de google-->
+            </section>
+            
+
+            <section id="contacto">
+                <h3>Contacto</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d34849.26833477149!2d-0.4044867633352174!3d39.46324572731736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1759912148730!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <form>
+                    <label for="nombre">Introduce tu nombre</label>         <!--Con esto se crea un cuestionario-->
+                    <input type="text" id="nombre">
+                    <p> </p>
+                    <label for="email">Introduce tu email</label>           <!--label es como para escribir la pregunta-->
+                    <input type="email" id="email"></label>                 <!--input es para crear un recuadro donde responder-->
+                    <p> </p>
+                    <label for="mensaje">Introduce tu mensaje</label>
+                    <textarea id="mensaje"></textarea>                      <!--El textarea peromite crear un area de texto menos restrictiva que los inputs-->
+                    <input type="submit">
+                </form>
+            </section>
+        </main>
+
+
+
+        <footer>
+            <!--Esto es el pie de pagina-->
+            <a href="https://github.com/RodrigoMM-555">github</a>
+        </footer>
+    </body>
+</html>
