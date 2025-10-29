@@ -74,4 +74,3 @@ while True:
     archivo = open("clientes.bin","wb")
     pickle.dump(clientes,archivo)           #Este ,archivo es para indicar donde dumpear la informacion
     archivo.close()
- 
