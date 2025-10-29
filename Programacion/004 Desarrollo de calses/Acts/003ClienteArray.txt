@@ -1,0 +1,39 @@
+Los arrays en las clases son una forma de darle más de un valor a una propiedad. Normalmente, se usa cuando un objeto puede tener más de un valor, como por ejemplo números de teléfono, residencias…
+
+Definir un array en las clases es tan simple como darle a la propiedad de la clase una lista en vez de un valor entero o una cadena de texto.
+````
+class = Objetos():
+	def __init__(self):
+		slef.peso = 0
+		self.residencias = [ ]
+````
+
+De esta manera, al añadir una residencia podemos poner varias separándolas por comas.
+````
+objeto1.residencias = aquí, allí
+````
+
+El ejercicio propuesto quedaria de la siguiente manera:
+````
+#Definimos la clase
+class Cliente():
+    def __init__(self):
+        self.nombre = ""
+        self.edad = 0
+        self.telefonos = []
+
+#Metemos a cliente1 en la clase
+cliente1 = Cliente()
+
+#Definimos sus propiedades
+cliente1.nombre = "Paco"
+cliente1.edad = 29
+cliente1.telefonos = 123456789,987654321
+
+#Y las mostramos por pantalla
+print(cliente1.nombre)
+print(cliente1.edad)
+print(cliente1.telefonos)
+````
+
+En conclusión, el uso de arrays en las clases y objetos es una buena forma de dar más de un valor a una propiedad, evitando tener que definir varias propiedades más, y organizándolo todo de mejor manera. En un futuro esto se podrá mejorar, pudiendo modificar o quitar partes específicas de esos arrays.

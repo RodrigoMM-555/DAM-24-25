@@ -1,0 +1,75 @@
+Las clases en una herramienta útil para dar propiedades a objetos y así distinguirlos unos de otros. Para avanzar más en este concepto podemos añadir las listas de manera que creamos una pseudobase de datos en la que almacenamos a los distintos objetos de una clase en concreto.   Empezamos a usar buenas prácticas como los métodos set y get.
+
+Por ejemplo, si tenemos una lista de archivos en la que metemos diferentes archivos con diferentes tamaños.
+````
+class Archivo( ):
+    def __init__(self):
+        self.peso = 0
+		def setpeso(self,peso):
+        self.__peso = peso
+    def getpeso(self):
+        return self.__peso
+
+archivos = [ ]
+````
+
+Tras declarar la clase y crear la lista, vacía por ahora, podemos añadir objetos a la clase y después a la lista.
+````
+archivo1 = Archivo()
+archivo1set.peso(10)
+archivos.append(archivo1)
+````
+
+Y por último lo mostramos desde la lista usando el método get.
+````
+print(archivos[0].getpeso())
+````
+
+Tras esta explicación, el ejercicio propuesto quedaría de la siguiente manera:
+````
+'''
+Rodrigo Menéndez Molina
+004/004 Creación de métodos
+Seters y geters en la clase cliente
+'''
+
+class Cliente():
+    def __init__(self):
+        self.nombrecompleto = ""
+        self.email = ""
+
+    #Definimos los setters 
+    def setNom(self,nombrecompleto):
+        self.__nombrecompleto = nombrecompleto
+    def setEmail(self,email):
+        self.__email = email
+
+    #Definimos los getters
+    def getNom(self):
+        return self.__nombrecompleto
+    def getEmail(self):
+        return self.__email
+
+#Creamos la lista
+lista_clientes = []
+
+#Metetmos al cliente 1 y 2 en la clase
+cliente1 = Cliente()
+cliente1.setNom("Paco")
+cliente1.setEmail("aja@gmail.com")
+
+cliente2 = Cliente()
+cliente2.setNom("Juanjo")
+cliente2.setEmail("ojo@gmail.com")
+
+#Y los añadimos a las listas
+lista_clientes.append(cliente1)
+lista_clientes.append(cliente2)
+
+print(lista_clientes[0].getNom(), lista_clientes[0].getEmail())
+print(lista_clientes[1].getNom(), lista_clientes[1].getEmail())
+````
+
+En conclusión, el uso de métodos set y get es una buena práctica que es necesaria utilizar para poder definir de forma correcta las clases. Pese a esto, su uso cuesta tiempo y en ejercicios cortos no vale la pena molestarse. Por otro lado, el uso de listas para almacenar objetos de una clase puede ayudar en futuros programas más grandes que engloben más de una clase.
+
+

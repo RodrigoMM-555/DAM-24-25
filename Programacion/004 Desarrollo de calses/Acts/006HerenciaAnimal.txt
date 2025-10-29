@@ -1,0 +1,52 @@
+
+El concepto de herencia a mi parecer es de los más importantes cuando hablamos de clase. Las herencias nos permiten pasar propiedades y métodos de una clase a otras más. Es una herramienta unidireccional, es decir, la clase que hereda no da nada a la clase madre, además la clase que hereda puede heredar de diferentes clases.
+
+Para heredar de una clase se usa el siguiente código.
+````
+class Madre():
+	def __init__(self):
+		self.x
+		
+class Hijo(Madre):
+	def __init__(self):
+		super().__init__()
+````
+De esta manera, la clase hijo ha recibido la propiedad .x de la clase madre. Esto se podría repetir con más hijos que reciban de una madre o más madres que den a uno o más hijos.
+
+El ejercicio propuesto sería el siguiente:
+````
+'''
+Rodrigo Menéndez Molina
+004/006 Utilización de clases heredadas
+Herencia de animal sobre la clase perro y gato
+'''
+
+#Creamos la clase madre y las que heredan
+class Animal():
+    def __init__(self):
+        self.edad = 0
+        self.nombre = ""
+        self.raza = ""
+
+class Gato(Animal):
+    def __init__(self):
+        super().__init__()
+
+class Perro(Animal):
+    def __init__(self):
+        super().__init__()
+
+#Definimos objetos y propiedades
+gato1 = Gato()
+gato1.edad = 10
+
+perro1 = Perro()
+perro1.edad = 7
+
+#Mostramos por pantalla
+print(gato1.edad)
+print(perro1.edad)
+````
+
+En conclusión, el uso de herencias es una gran herramienta para crear agrupaciones de clases que compartan algunos rasgos, pero no todos. Por ejemplo, en videojuegos todos los enemigos comparten unas características, pero no son completamente iguales.
+

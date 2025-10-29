@@ -1,4 +1,10 @@
 
+'''
+Rodrigo Menéndez Molina
+004 / 006 utilización de clases y objetos 
+Creación de clase matemáticas
+'''
+
 class Matematicas():
     def __init__(self):
         self.Pi = 3.141592
