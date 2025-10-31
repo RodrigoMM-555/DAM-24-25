@@ -29,3 +29,42 @@ No tiene programacion orientada a objetos
 C++: 
 (Incremento de C) - 1984 -1986
 Igual que C, pero con mas cosas, entre ellas programacion orientada a objetos
+cpp = Archivo de codigo para ejecutar
+hpp = Archivo de librerias para importar
+
+Java:
+Creado en Sun Microsistems (hoy oracle)
+1995
+Lenguaje estrictamente orientado a objetos
+Pensado para:
+1. Construir software grnade de forma comoda
+2. Dar al ususario un ecosistema completo de herramientas
+3. Un IDE comodo de usar
+Todas las promesas se cumplieron pero oraclese esta cargando JAva, por eso ya no se usa
+
+En Android antes s eusaba java ahora se usa kotlin
+Oracle demando a google por el uso de java en android
+- Java es gratuito
+- Google contruye andoird con Java por ser gratis
+- Andoid generea mucho beneficio
+- Oracle quiere rentabilizar Java y demanda a google
+- Google gana el juicio
+- Y a continuacion abandona Java
+
+Ecosistema Windows-Microsoft .NET
+Cuando Java se empieza a comer el mercado 1996-1997
+Micrsoft tiene envidia y saca la paltaforma .net, que e suna copia de java pero de microsoft
+1998 Micrsoft saca C# (do sostenido o C++++)
+Precio entre los 1000 y 2000 euros
+Lenguajes:
+Visual C#
+Visual Basic .NET
+ASP .NET (web)
+F# para interfaces de usuario
+Cerrado para windows unicamente
+
+Java no compila ni interpreta crea un programa .jar que funciona como un intermedio
+Contiene el programa pero no se puede ver el codigo
+Y se ejcuta contra una maquina virtual
+
+

@@ -2,4 +2,7 @@ Accedemos al centro de aplicaiones
 
 centro de aplicaciones en ubuntu
 
-Instalamos el apache NetBeans
+Instalamos el apache NetBeans, IDE de java
+
+
+sudo apt install openjdk-17-jdk

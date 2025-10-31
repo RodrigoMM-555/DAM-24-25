@@ -36,7 +36,9 @@ MODIFY COLUMN persona INT;
 --Paso 2 crear la foreign key
 ALTER TABLE emails
 ADD CONSTRAINT fk_emails_personas
+--Persona es lo que queremos relacionar
 FOREIGN KEY (persona) 
+--Personas es la otra table e identificador es lo que se relaciona
 REFERENCES personas(identificador)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
