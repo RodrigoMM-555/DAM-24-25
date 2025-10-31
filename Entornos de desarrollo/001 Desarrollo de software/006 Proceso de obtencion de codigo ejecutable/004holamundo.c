@@ -9,7 +9,7 @@
 // = comentario en C
 
 int main(){
-	printf("Hola mundo desde C")
+	printf("Hola mundo desde C");
 	return 0;
 }
 

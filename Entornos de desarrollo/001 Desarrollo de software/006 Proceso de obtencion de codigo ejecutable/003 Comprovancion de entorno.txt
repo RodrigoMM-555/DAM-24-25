@@ -1,0 +1,9 @@
+En la maquina virtual
+
+Comprobacion de c:
+gcc
+sudo apt install gcc
+
+Comprovacion de C++
+g++
+sudo apt install g++

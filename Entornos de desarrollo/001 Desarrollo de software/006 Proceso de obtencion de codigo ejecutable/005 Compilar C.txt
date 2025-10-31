@@ -1,0 +1,3 @@
+gcc 004holamundo.c
+
+./a-out
