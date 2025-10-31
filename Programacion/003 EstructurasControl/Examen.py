@@ -67,7 +67,9 @@ while True:
             print("Demasiado alto")
             intentos -= 1
     elif confirmacion == "n":
-        print("Número cancelado")
+        print("Intento cancelado")
+    else:
+        print("¿Que?")
 
     #Vemos cuantos intentos quedan y si los intentos son negativos
     try:

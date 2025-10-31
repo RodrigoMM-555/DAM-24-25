@@ -1,0 +1,20 @@
+
+#include <stdio.h>
+
+// Include = Traigo libreria
+// std = standar (la por defecto)
+// i = input
+// o = output
+// .h = indica la libreria de C
+// = comentario en C
+
+int main(){
+	printf("Hola mundo desde C")
+	return 0;
+}
+
+// main es la funcion principal, se tiene que llamar asi si o si
+// int es el tipo de datos que devuelve la funcion, siempre tiene que devolver algo
+// return 0 cumple la promesa, si metes int devielves int
+// printf = print en python
+// las instrucciones terminan en ; como en mysql
