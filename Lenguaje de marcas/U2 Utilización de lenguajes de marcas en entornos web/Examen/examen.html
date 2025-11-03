@@ -1,0 +1,130 @@
+<!--Declaramos el documento y seleccionamos el lenguaje y el charset-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Le ponemos título a la página-->
+        <title>Curriculum</title>
+        <meta charset="utf-8">
+        <!--Definimos el estilo-->
+        <style>
+            /*Le ponemos color al fondo y fuente a todo el documento*/
+            html{background-color: gray;font-family: sans-serif;font-size: 15px;}
+
+            /*Definimos un tamaño, color de fondo y usamos un display flex para separa en dos columnas el archivo*/
+            body{width: 600px; background-color: ghostwhite; margin: auto;display: flex;}
+
+            /*La parte izquierda que ocupa 2 flex, las imágenes miden 100% y se definen el color del texto y el fondo. Además, se pone una sangría a todo el texto en esa parte*/
+            #izquierda img{
+                width: 100%;
+                border-radius: 50%; /* Hace la imagen circular */
+                object-fit: cover; /* Asegura que la imagen se recorte bien sin distorsionarse */
+                }
+
+            #izquierda{flex: 2; background-color: rgb(26, 103, 155);padding: 20px;color: white;}
+            #izquierda h3{margin-bottom: 3px;}
+
+            /*El felx de la derecha ocupa 4 y su sangría es de 15 px*/
+            #derecha{flex:4; padding: 15px;}
+            /*Esto le da a losa artículos de la derecha una forma de lista por filas, no de columnas, como sería el flex utilizado para separar en dos el documento*/
+            #derecha article{display: flex; align-items: center; gap: 3px;} /*Gap es para la separacion con las imagenes*/
+            /*Esto le da a la h3 de la derecha un color en concreto*/
+            #derecha h3{color: rgb(26, 103, 155); margin-bottom: 3px;}
+            /*Esto modifica los margenes que hay en las imágenes y textos para que queden más juntas. El asterisco quiere decir que se aplica a todos los elemento que se encuentre dentro de esa unidad*/
+            #derecha article *{padding: 0px;margin: 3px;}
+                                                                               
+            #contacto img{width: 5%; height: 5%;}
+
+
+
+        </style>
+    </head>
+    
+    <body>
+        <!--Sección izquierda-->
+        <section id="izquierda">
+            <!--Una imagen mía-->
+            <img src="Captura.png" alt="Yo" class="imagen-circular">
+
+            <!--Artículos sobre mi descripción personal y habilidades-->
+            <article>                                                           
+                <h3>Descripción personal</h3>
+                <p>Estudiante de programación. En busca de aprender más sobre la industria y como utilizar sus habilidades para mejorar su eficiencia.</p>
+
+            </article>
+            <article>
+                <h3>Habilidades</h3>
+                <!--Lista de habilidades-->
+                <ul>
+                    <li>Buena comunicación</li>
+                    <li>Ordenado</li>
+                    <li>Control del tiempo</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Puntual</li>
+                </ul>
+            </article>
+        </section>
+        
+        <!--Sección derecha-->
+        <section id="derecha">
+            <!--Título-->
+            <h1>Rodrigo Menéndez Molina</h1>
+            <h2>Estudiante y desarrollador</h2>
+            
+            <!--Sección de contacto, con dos artículos-->
+            <div id="contacto">
+                <article>
+                    <img src="25453.png" alt="en progrso">
+                    <div class="texto">
+                        <p>684011383</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="26416.png" alt="en progrso">
+                    <div class="texto">
+                        <p>menendez.rodrigo555@gmail.com</p>
+                    </div>
+                </article>
+            
+            <!--Sección de formación con dos artículos y negrita en algunos textos-->
+            <div id="formacion">
+            <h3><u>Educación</u></h3>
+            <article>
+                <div class="texto">
+                    <p>Actualmente cursando 2025 - 2027</h4>
+                    <p style="margin: 0px;"><b>Grado superior en desarrollo de aplicaciones multiplataforma (DAM)</b></p>
+                    <p>Instituto CEAC FP</h4>
+                </div>
+            </article>
+            <article>
+                <div class="texto">
+                    <p>2022 - 2024</p>
+                    <p style="margin: 0px;"><b>Bachiller itinerario tecnológico</b></p>
+                    <p>Escuelas San Jose Jesuitas</p>
+                </div>
+            </article>
+
+            <!--Sección de experiencia-->
+            <div id="experiencia">
+                <h3><u>Experiencia laboral</u></h3>
+                <article>
+                    <div class="texto">
+                        <p>2025</h4>
+                        <p style="margin: 0;"><b>Monitor de tiempo libre</b></p>
+                        <p>Estuve de monitor en el grupo scout Seeonee del MEV. Tenía reuniones todas las semanas para preparar actividades y dinámicas, teniendo que trabajar constantemente en grupo y comunicándome con mis compañeros. Además, el trabajo requería una gran empatía para tratar con los niños y niñas del grupo</h4>
+                    </div>
+                </article>
+                </div>    
+
+            <!--Sección de idiomas-->
+            <div id="idiomas">
+            <h3><u>Idiomas</u></h3>
+            <article>
+                <div class="texto">
+                    <p>Inglés B2 Cambridge</p>
+                    <p>Valenciano C1 Escuela de idiomas</p>
+                </div>
+            </article>
+
+        </section>
+    </body>
+</html>
