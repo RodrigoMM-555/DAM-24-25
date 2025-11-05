@@ -1,20 +1,7 @@
 #Librerias a importar
 import mysql.connector
 
-#Funcion de insertar
-def insertar_pieza(titulo,descripcion,imagen,url,id_categoria):
-    cursor.execute('''
-        INSERT INTO pieza
-        VALUES(
-            NULL,
-            "'''+titulo+'''",
-            "'''+descripcion+'''",
-            "'''+imagen+'''",
-            "'''+url+'''",
-            '''+id_categoria+'''
-        );
-        ''')
-    
+#Funcion de insertar    
 def insertar_categoria(titulo,descripcion):
     cursor.execute('''
         INSERT INTO categoria
@@ -40,6 +27,7 @@ print("###CRUD pieza y categorias v0.1###")
 
 #Bucle y menu
 while True:
+    print("-----------------------------")
     print("-------Menu-------")
     print("1. Añadir pieza")
     print("2. Listar piezas")
@@ -47,27 +35,37 @@ while True:
     print("4. Eliminar pieza")
     print("5. Salir")
     opcion = int(input("Que pocion quieres: "))
+    print("-----------------------------")
+
 
 ##############################################################################################
     #Priemra opcion, añadir pieza
     if opcion == 1:
 
-        print("-------------------------")
         print("1. Insertar pieza")
         print("2. Insertar categoria")
         op1 = int(input("Opcion: "))
-        print("-------------------------")
 
         cursor = conexion.cursor()
 
         if op1 == 1:
             titulo = input("Titulo: ")
             descripcion = input("Descripcion: ")
-            imagen = input("imagen: ")
+            imagen = input("Imagen: ")
             url = input("Url de la imagen: ")
             id_categoria = input("Identificador categoria: ")
 
-            insertar_pieza(titulo,descripcion,imagen,url,id_categoria)        
+            cursor.execute('''
+                INSERT INTO pieza
+                VALUES(
+                    NULL,
+                    "'''+titulo+'''",
+                    "'''+descripcion+'''",
+                    "'''+imagen+'''",
+                    "'''+url+'''",
+                    '''+id_categoria+'''
+                    );
+                ''')
 
             conexion.commit()
 
@@ -89,7 +87,8 @@ while True:
 
     #Seguna opcion listar piezas
     elif opcion == 2:
-        #Cramos el cursor y ejecutamos al consulta
+
+        #Cramos el cursor y ejecutamos al consulta, mostramos la vision de piezas y categorias
         cursor = conexion.cursor()
         cursor.execute('''
             SELECT *FROM vista_piezas;
@@ -127,7 +126,31 @@ while True:
 ##############################################################################################
     #Opcion3, actualizar una pieza
     elif opcion == 3:
-        pass
+
+        identificador = input("Identificador de la pieza a actualizar: ")
+
+        titulo = input("Nuevo titulo: ")
+        descripcion = input("Nueva descripcion: ")
+        imagen = input("Nueva imagen: ")
+        url = input("Nuevo url de la imagen: ")
+        id_categoria = input("Nuevo identificador categoria: ")
+
+        cursor = conexion.cursor()
+        cursor.execute('''
+            UPDATE pieza
+            SET titulo = "'''+titulo+'''",
+                descripcion = "'''+descripcion+'''",
+                imagen = "'''+imagen+'''",
+                url = "'''+url+'''",
+                id_categoria = "'''+id_categoria+'''"
+                WHERE identificador = "'''+identificador+'''";
+            ''')
+        
+        conexion.commit()
+
+        print("Pieza actualizada")
+
+        cursor.close()
 
 ############################################################################################
     #Opcion 4, eliminar una pieza
