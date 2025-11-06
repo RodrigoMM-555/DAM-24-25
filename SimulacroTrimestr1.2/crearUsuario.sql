@@ -24,5 +24,5 @@ MAX_USER_CONNECTIONS 0;
 GRANT ALL PRIVILEGES ON `simulacro`.* 
 TO 'Usimulacro'@'localhost';
 
--- recarga la tabla de privilegios
+-- recarga la tabla de privilegios pra aplicarlos inmediatamente
 FLUSH PRIVILEGES;

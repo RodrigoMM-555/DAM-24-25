@@ -31,6 +31,7 @@ app = Flask(__name__)
 #Atrapo la ruta raiz
 @app.route("/")
 
+#Creamos la funcion
 def raiz():
     print("Funciona")
     cadena =  '''
@@ -81,6 +82,7 @@ def raiz():
         </header>
         <main>
     '''
+    #Generamos todos los articulos
     for fila in filas:
         titulo,descripcionP,imagen,categoria,descripcionC = fila
         cadena +=   ("<article>"
@@ -89,6 +91,7 @@ def raiz():
                         "<p>"+str(categoria)+"</p>"
                         "<p>"+str(descripcionP)+"</p>"
                     "</article>")
+    #Cerramos la generacion de articulos
     cadena +='''
         </main>
         <footer>
@@ -99,7 +102,10 @@ def raiz():
 
     </html>
     '''
+    #Devolvemos la cadena con todo el html
     return cadena
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+    
