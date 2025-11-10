@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Curriculum</title>
+        <meta charset="utf-8">
+        <style>
+            html{background-color: gainsboro;font-family: sans-serif;}
+            body{background-color: ghostwhite;margin: auto;min-height: 200px;display: flex;width: 600px;}
+            #izquierda{flex:2;background-color: turquoise;padding: 20px;}
+            #derecha{flex: 4;background-color: white;padding: 20px;}
+        </style>
+    </head>
+    <body>
+        <div id="izquierda"></div>
+        <div id="derecha">
+            <h1>{{nombre}} {{apellidos}}</h1>
+            <h3>{{email}}</h3>
+            <ul>
+                <li>{{telefono}}</li>
+                <li>{{direccion}}</li>
+                <li>{{codigo_postal}}</li>
+                <li>{{edad}}</li>
+            </ul>
+        </div>
+    </body>
+</html>
