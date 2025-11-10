@@ -1,3 +1,4 @@
+
 --Entrar en mysql
 sudo mysql -u root -p
 
@@ -9,3 +10,4 @@ USE empresaDAM;
 
 --Mostramos las tablas
 SHOW TABLES;
+

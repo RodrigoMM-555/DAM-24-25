@@ -66,7 +66,6 @@ ON DELETE CASCADE
 ON UPDATE CASCADE;
 
 --Creamos una vista
---El AS es para cambiar el nombre del campo para que no se repita
 CREATE VIEW vista_piezas AS
 SELECT 
 pieza.titulo AS titulo_pieza, 
