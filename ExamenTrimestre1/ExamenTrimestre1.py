@@ -1,14 +1,13 @@
-
 '''
 Rodrigo Menendez Molina
 Examen trimestre 1 v0.1
-Portafolio piezas y categorias
+Portafolio piezas y categorías
 '''
 
 #Librerias a importar
 import mysql.connector
 
-#Conexion de suusario para mysql
+#Conexión del usuario para mysql
 conexion = mysql.connector.connect(
     host="localhost",
     user="Trimestral1",
@@ -19,9 +18,9 @@ conexion = mysql.connector.connect(
 #Mensaje de entrada
 print("-----------------------------")
 print("#####Rodrigo Menendez Molina######")
-print("###CRUD pieza y categorias v0.1###")
+print("###CRUD pieza y categorías v0.1###")
 
-#Bucle y menu
+#Bucle y menú
 while True:
     print("-----------------------------")
     print("-------Menu-------")
@@ -34,20 +33,21 @@ while True:
     print("-----------------------------")
 
 
-##############################################################################################
-    #Priemra opcion, añadir pieza
+###################################################################################
+
+    #Primera opción, añadir pieza
     if opcion == 1:
 
         cursor = conexion.cursor()
 
-        #Insercion de valores
-        print("Insterta la pieza")
-        titulo = input("Titulo: ")
-        descripcion = input("Descripcion: ")
+        #Inserción de valores
+        print("Inserta la pieza")
+        titulo = input("Título: ")
+        descripcion = input("Descripción: ")
         fecha = input("Fecha: ")
-        id_categoria = input("Identificador categoria: ")
+        id_categoria = input("Identificador categoría: ")
 
-        #Ejecucion de la peticion
+        #Ejecución de la petición
         cursor.execute('''
             INSERT INTO piezasportafolio
             VALUES(
@@ -66,18 +66,20 @@ while True:
 
         cursor.close()
 
-##############################################################################################
+###################################################################################
 
-    #Seguna opcion listar piezas
+    #Segunda opción listar piezas
     elif opcion == 2:
 
-        #Cramos el cursor y ejecutamos al consulta, mostramos la vision de piezas y categorias
+        #Creamos el cursor 
         cursor = conexion.cursor()
+				
+		#Mostramos las piezas
         cursor.execute('''
             SELECT *FROM piezasportafolio;
             ''')
 
-        #Obtenemos las finals
+        #Obtenemos las filas
         filas = cursor.fetchall()
 
         #Mostramos las filas
@@ -89,12 +91,12 @@ while True:
 
         print("--------------------------------")
 
-        #Mostramos piezas
+        #Mostramos la peticion cruzada
         cursor.execute('''
             SELECT *FROM vista_piezas;
             ''')
 
-        #Obtenemos las finals
+        #Obtenemos las filas
         filas = cursor.fetchall()
 
         #Mostramos las filas
@@ -104,21 +106,22 @@ while True:
         else:
             print("No se encontraron piezas.")
         
-        #Peticion terminada
+        #Petición terminada
         cursor.close()
 
-##############################################################################################
-    #Opcion3, actualizar una pieza
+###################################################################################
+
+    #Opción 3, actualizar una pieza
     elif opcion == 3:
 
         #Pedimos el identificador de la pieza a actualizar
         identificador = input("Identificador de la pieza a actualizar: ")
 
         #Cambiamos los valores
-        titulo = input("Nuevo titulo: ")
-        descripcion = input("Nueva descripcion: ")
+        titulo = input("Nuevo título: ")
+        descripcion = input("Nueva descripción: ")
         fecha = input("Nueva fecha: ")
-        id_categoria = input("Nuevo identificador categoria: ")
+        id_categoria = input("Nuevo identificador categoría: ")
 
         #Nos conectamos y ejecutamos
         cursor = conexion.cursor()
@@ -131,16 +134,17 @@ while True:
                 WHERE identificador = "'''+identificador+'''";
             ''')
         
-        #Peticion terminada
+        #Petición terminada
         conexion.commit()
 
         print("Pieza actualizada")
 
-        #Cerramos la conexion
+        #Cerramos la conexión
         cursor.close()
 
-############################################################################################
-    #Opcion 4, eliminar una pieza
+###################################################################################
+
+    #Opción 4, eliminar una pieza
     elif opcion == 4:
 
         #Pedimos el identificador de la pieza que se va a a eliminar
@@ -152,21 +156,20 @@ while True:
         DELETE FROM piezasportafolio WHERE identificador = '''+identificador+'''                       
         ''')
 
-        #Peticion terminada
+        #Petición terminada
         conexion.commit()
 
         print("Pieza borrada")
 
-        #Cerramos la conexion
+        #Cerramos la conexión
         cursor.close()
 
-##############################################################################################
-    #Opcion 5, salir
+###################################################################################
+
+    #Opción 5, salir
     elif opcion == 5:
         break
 
-    #Culaquier otra opcion dara error
+    #Cualquier otra opción dará error
     else:
         print("Inavlido")
-
-
