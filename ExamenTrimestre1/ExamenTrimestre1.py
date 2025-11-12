@@ -46,6 +46,7 @@ while True:
         descripcion = input("Descripción: ")
         fecha = input("Fecha: ")
         id_categoria = input("Identificador categoría: ")
+        imagen = input("Imagen: ")
 
         #Ejecución de la petición
         cursor.execute('''
@@ -55,7 +56,8 @@ while True:
                 "'''+titulo+'''",
                 "'''+descripcion+'''",
                 "'''+fecha+'''",
-                '''+id_categoria+'''
+                '''+id_categoria+''',
+                "'''+imagen+'''"
                 );
             ''')
 
@@ -122,6 +124,8 @@ while True:
         descripcion = input("Nueva descripción: ")
         fecha = input("Nueva fecha: ")
         id_categoria = input("Nuevo identificador categoría: ")
+        imagen = input("Nueva imagen: ")
+
 
         #Nos conectamos y ejecutamos
         cursor = conexion.cursor()
@@ -130,7 +134,8 @@ while True:
             SET titulo = "'''+titulo+'''",
                 descripcion = "'''+descripcion+'''",
                 fecha = "'''+fecha+'''",
-                id_categoria = "'''+id_categoria+'''"
+                id_categoria = "'''+id_categoria+'''",
+                imagen = "'''+imagen+'''"
                 WHERE identificador = "'''+identificador+'''";
             ''')
         

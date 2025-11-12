@@ -175,3 +175,18 @@ TO 'Trimestral1'@'localhost';
 
 --Recargamos los permisos 
 FLUSH PRIVILEGES;
+
+--Añadimos una columna de imagenes para el ejercicio de proyecto intermodular
+ALTER TABLE piezasportafolio
+ADD COLUMN imagen VARCHAR(100);
+
+--Lo mismo para la vista
+DROP View vista_piezas;
+
+CREATE VIEW vista_piezas AS
+SELECT 
+piezasportafolio.titulo, piezasportafolio.descripcion, piezasportafolio.fecha,
+categoriasportafolio.nombre, piezasportafolio.imagen
+FROM piezasportafolio
+LEFT JOIN categoriasportafolio
+ON piezasportafolio.id_categoria = categoriasportafolio.identificador;

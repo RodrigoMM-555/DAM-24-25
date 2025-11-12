@@ -1,1 +1,128 @@
 
+import mysql.connector
+from flask import Flask, render_template_string
+
+
+#Conexion de suusario para mysql
+conexion = mysql.connector.connect(
+    host="localhost",
+    user="Trimestral1",
+    password="Trimestral123$",
+    database="portafolioexamen"
+)
+
+########################################################################################
+
+cursor = conexion.cursor()
+
+cursor.execute('''SELECT *FROM vista_piezas;''')
+
+#Obtenemos las filas
+filas = cursor.fetchall()
+
+
+#########################################################################################
+
+#Creamos una palicacion flask (osea web)
+app = Flask(__name__)
+
+#Atrapo la ruta raiz
+@app.route("/")
+
+#Creamos la funcion
+def raiz():
+    print("Funciona")
+    cadena =  '''
+    <!--Declaramos el html-->
+    <!DOCTYPE html>
+    <!--Elegimos el lenguaje-->
+    <html lang="es">
+
+    <!--Empezamos el head-->
+    <head>
+        <!--Imagen de la pestaña de arriba-->
+        <link rel="icon" href="engranajes.jpg" type="image/jpeg">
+        <!--Ponemos un título-->
+        <title>ExamenTri1</title>
+        <!--Seleccionamos una codificación-->
+        <meta charset="UTF-8">
+
+        <!--Creamos un estilo-->
+        <style>
+            /*Elegimos fondo y fuente de todo el cuerpo*/
+            body{                                   
+                background:rgb(220, 238, 236);     
+                font-family:monospace;              
+            }
+            /*Definimos tamaño, margen y otras cosas de los elementos del main*/
+            header,main,footer{
+                width:600px;         
+                margin:auto;                
+                padding:20px;
+                /*Para que el textoe ste centrado*/
+                text-align: center;     
+            }
+            /*Le damos otro color al header y footer*/
+            header,footer{
+                background: rgb(226, 226, 233);
+            }
+            /*Le damos otro color al main así como una forma de red*/
+            main{
+                background:ghostwhite;
+                /*Con esto creamos un grid para los artículos del main*/
+                display: grid;
+                /*El número de auto son el número de columnas*/
+                grid-template-columns: auto auto auto; 
+                gap: 20px;
+            }
+            /*Configuracion para el tamaño de las imagenes en main*/
+            main img{
+                width: 100%;
+                height: auto;
+                margin: 0px;
+            }
+            /*Modificamos un poco los margenes para que quede mejor*/
+            main p, main h3{
+                margin: 5px;
+            }
+        </style>
+    </head>
+
+    <!--Empezamos el body-->
+    <body>
+        <!--El cabezal de la web-->
+        <header>
+            <h1>Rodrigo Menéndez Molina</h1>
+            <h2>menendez.rodrigo555@gmail.com</h2>
+        </header>
+        <main>
+    '''
+    #Generamos todos los articulos
+    for fila in filas:
+        titulo,descripcion,fecha,categoria,imagen = fila
+        cadena +=   ("<article>"
+                        "<h3>"+str(titulo)+"</h3>"
+                        "<img src="+str(imagen)+" alt='En proceso'></img>"
+                        "<p><u>"+str(categoria)+"</u></p>"
+                        "<p>"+str(descripcion)+"</p>"
+                        "<p>"+str(fecha)+"</p>"
+                    "</article>")
+    #Cerramos la generacion de articulos
+    cadena +='''
+        </main>
+        <!--Empezamos el pie de página-->
+        <footer>
+            <!--Copyright-->
+            <p>© 2025 Rodrigo Menéndez Molina. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+
+    </html>
+    '''
+    #Devolvemos la cadena con todo el html
+    return cadena
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+    
