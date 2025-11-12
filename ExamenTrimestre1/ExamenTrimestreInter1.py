@@ -20,7 +20,6 @@ cursor.execute('''SELECT *FROM vista_piezas;''')
 #Obtenemos las filas
 filas = cursor.fetchall()
 
-
 #########################################################################################
 
 #Creamos una palicacion flask (osea web)
