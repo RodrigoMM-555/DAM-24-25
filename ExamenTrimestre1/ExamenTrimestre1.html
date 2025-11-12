@@ -1,0 +1,141 @@
+<!--Declaramos el html-->
+<!DOCTYPE html>
+<!--Elegimos el lenguaje-->
+<html lang="es">
+
+<!--Empezamos el head-->
+<head>
+    <!--Imagen de la pestaña de arriba-->
+    <link rel="icon" href="engranajes.jpg" type="image/jpeg">
+    <!--Ponemos un título-->
+    <title>ExamenTri1</title>
+    <!--Seleccionamos una codificación-->
+    <meta charset="UTF-8">
+
+    <!--Creamos un estilo-->
+    <style>
+        /*Elegimos fondo y fuente de todo el cuerpo*/
+        body{                                   
+            background:rgb(220, 238, 236);     
+            font-family:monospace;              
+        }
+        /*Definimos tamaño, margen y otras cosas de los elementos del main*/
+        header,main,footer{
+            width:600px;         
+            margin:auto;                
+            padding:20px;
+            /*Para que el textoe ste centrado*/
+            text-align: center;     
+        }
+        /*Le damos otro color al header y footer*/
+        header,footer{
+            background: rgb(226, 226, 233);
+        }
+        /*Le damos otro color al main así como una forma de red*/
+        main{
+            background:ghostwhite;
+            /*Con esto creamos un grid para los artículos del main*/
+            display: grid;
+            /*El número de auto son el número de columnas*/
+            grid-template-columns: auto auto auto; 
+            gap: 20px;
+        }
+        /*Configuracion para el tamaño de las imagenes en main*/
+        main img{
+            width: 100%;
+            height: auto;
+            margin: 0px;
+        }
+        /*Modificamos un poco los margenes para que quede mejor*/
+        main p, main h3{
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<!--Empezamos el body-->
+<body>
+    <!--El cabezal de la web-->
+    <header>
+        <h1>Rodrigo Menéndez Molina</h1>
+        <h2>menendez.rodrigo555@gmail.com</h2>
+    </header>
+
+    <!--El cuerpo de la web-->
+    <main>
+        <!--Artículo que se repite indefinidamente-->
+        <article>
+            <h3>Título</h3>
+            <!--Mostramos una imagen alojada en la carpeta raíz y  el alt será texto que saldrá si no carga la imagen-->
+            <img src="engranajes.jpg" alt="En proceso"></img>
+            <p><u>Categoria</u></p>
+            <p>Descripción</p>
+            <p>Fecha</p>
+        </article>
+
+        <!--Artículo de ejemplo-->
+        <article>
+            <h3>Proyecto 1</h3>
+            <img src="engranajes.jpg" alt="En proceso"></img>
+            <p><u>Engranaje</u></p>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit dictum, per tincidunt pretium vivamus non ultrices ultricies elementum natoque, semper aliquet molestie ligula accumsan velit nisl.</p>
+            <p>20/04/2030</p>
+        </article>
+
+        <article>
+            <h3>Título</h3>
+            <img src="engranajes.jpg" alt="En proceso"></img>
+            <p><u>Categoria</u></p>
+            <p>Descripción</p>
+            <p>Fecha</p>
+        </article>
+
+        <article>
+            <h3>Título</h3>
+            <img src="engranajes.jpg" alt="En proceso"></img>
+            <p><u>Categoria</u></p>
+            <p>Descripción</p>
+            <p>Fecha</p>
+        </article>
+
+        <article>
+            <h3>Título</h3>
+            <img src="engranajes.jpg" alt="En proceso"></img>
+            <p><u>Categoria</u></p>
+            <p>Descripción</p>
+            <p>Fecha</p>
+        </article>
+
+        <article>
+            <h3>Título</h3>
+            <img src="engranajes.jpg" alt="En proceso"></img>
+            <p><u>Categoria</u></p>
+            <p>Descripción</p>
+            <p>Fecha</p>
+        </article>
+
+        <article>
+            <h3>Título</h3>
+            <img src="engranajes.jpg" alt="En proceso"></img>
+            <p><u>Categoria</u></p>
+            <p>Descripción</p>
+            <p>Fecha</p>
+        </article>
+
+        <article>
+            <h3>Título</h3>
+            <img src="engranajes.jpg" alt="En proceso"></img>
+            <p><u>Categoria</u></p>
+            <p>Descripción</p>
+            <p>Fecha</p>
+        </article>
+
+    </main>
+    <!--Empezamos el pie de página-->
+    <footer>
+        <!--Copyright-->
+        <p>© 2025 Rodrigo Menéndez Molina. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
