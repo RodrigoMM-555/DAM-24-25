@@ -3,7 +3,7 @@ import mysql.connector
 from flask import Flask, render_template_string
 
 
-#Conexion de suusario para mysql
+#Conexion de ususario para mysql
 conexion = mysql.connector.connect(
     host="localhost",
     user="Trimestral1",
@@ -11,16 +11,14 @@ conexion = mysql.connector.connect(
     database="portafolioexamen"
 )
 
-########################################################################################
-
+#Creacion y conjexion del cursor
 cursor = conexion.cursor()
 
+#Ejecutamos una peticion a la base de datos
 cursor.execute('''SELECT *FROM vista_piezas;''')
 
-#Obtenemos las filas
+#Obtenemos las filas de la tabla vista_piezas de la base de datos
 filas = cursor.fetchall()
-
-#########################################################################################
 
 #Creamos una palicacion flask (osea web)
 app = Flask(__name__)
@@ -30,7 +28,9 @@ app = Flask(__name__)
 
 #Creamos la funcion
 def raiz():
+    #Mensaje de comprovacion
     print("Funciona")
+    #Cadena del archivo HTML
     cadena =  '''
     <!--Declaramos el html-->
     <!DOCTYPE html>
@@ -96,9 +96,12 @@ def raiz():
         </header>
         <main>
     '''
-    #Generamos todos los articulos
+    #Generamos todos los articulos, esta es la seccion que se repetira
+    #Habran tantos articulos como hayan en la abse de datos
+    #Por cada fila en la tabla las variables cogeran los valores correspondientes
     for fila in filas:
         titulo,descripcion,fecha,categoria,imagen = fila
+        #Se suma a la cadena de HTML
         cadena +=   ("<article>"
                         "<h3>"+str(titulo)+"</h3>"
                         "<img src="+str(imagen)+" alt='En proceso'></img>"
@@ -106,7 +109,7 @@ def raiz():
                         "<p>"+str(descripcion)+"</p>"
                         "<p>"+str(fecha)+"</p>"
                     "</article>")
-    #Cerramos la generacion de articulos
+    #Cerramos la generacion de articulos y sumamos lo que queda del HTML
     cadena +='''
         </main>
         <!--Empezamos el pie de página-->
@@ -118,7 +121,7 @@ def raiz():
 
     </html>
     '''
-    #Devolvemos la cadena con todo el html
+    #Devolvemos la cadena con todo el HTML
     return cadena
 
 if __name__ == "__main__":
