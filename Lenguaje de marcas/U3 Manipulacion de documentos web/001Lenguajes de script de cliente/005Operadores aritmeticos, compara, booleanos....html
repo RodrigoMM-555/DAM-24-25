@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Operadores aritméticos
+        document.write(4+3);
+        document.write(4-3);
+        document.write(4*3);
+        document.write(4/3);
+        document.write(4%3);
+
+        //Operadores de comparacion
+        document.write(4==3);
+        document.write(4!=3);
+        document.write(4>3);
+        document.write(4<3);
+        document.write(4>=3);
+        document.write(4<=3);
+        
+        //Operadores booleanos
+        //Operador and, en python es literalmente and y en java es &&
+        console.log(4==4 && 3==3 && 2==2);   //Cierto
+        console.log(4==4 && 3==3 && 2==1);   //Falso
+        //Operador or, en python es literalmente or y en java es ||
+        console.log(4==4 || 3==3 || 2==2);  //Cierto
+        console.log(4==4 || 3==3 || 2==1);  //Cierto
+        console.log(4==4 || 3==1 || 2==1);  //Cierto
+        console.log(4==1 || 3==1 || 2==1);  //Falso
+
+        //Operadores matematicos abreviados
+        var edad = 38;
+        console.log("Mi edad es de",edad,"años");
+        edad = edad + 5;
+
+        console.log("Mi edad es de",edad,"años");
+        edad += 5; //Equivalente a edad = edad + 5
+        console.log("Mi edad es de",edad,"años");
+        edad -= 2; //Equivalente a edad = edad - 2
+        console.log("Mi edad es de",edad,"años");
+        edad *= 2; //Equivalente a edad = edad * 2
+        console.log("Mi edad es de",edad,"años");
+        edad /= 3; //Equivalente a edad = edad / 3
+        console.log("Mi edad es de",edad,"años");
+        
+        //Incremetnos inmediatos
+        edad = 38;
+        console.log("Mi edad es de",edad,"años");
+        edad++; //Equivalente a edad = edad + 1
+        console.log("Mi edad es de",edad,"años");
+        edad--; //Equivalente a edad = edad - 1
+        console.log("Mi edad es de",edad,"años");
+    </script>
+</body>
+</html>

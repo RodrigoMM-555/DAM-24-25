@@ -1,0 +1,3 @@
+/*En vez de poner auto auto auto... le decimos que lo repita 7 veces y con un tamaño concreto*/
+body{display: grid; grid-template-columns: repeat(7,60px);}
+div{border: 1px solid grey; width: 60px; height: 60px;}

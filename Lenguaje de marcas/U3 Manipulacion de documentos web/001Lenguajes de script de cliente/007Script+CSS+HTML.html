@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*En vez de poner auto auto auto... le decimos que lo repita 7 veces y con un tamaño concreto*/
+        body{display: grid; grid-template-columns: repeat(7,60px);}
+        div{border: 1px solid grey; width: 60px; height: 60px;}
+    </style>
+</head>
+
+<body>
+    <script>
+        //Esto es un calendario
+        for(let dia = 1; dia<=31; dia++){
+            //No se recomienda mezclar asi el java y el html
+            document.write("<div>"+dia+"</div>");
+        }
+    </script>
+</body>
+</html>
