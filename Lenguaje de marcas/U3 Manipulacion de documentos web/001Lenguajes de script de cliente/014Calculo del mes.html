@@ -1,0 +1,9 @@
+<script>
+    const hoy = new Date();
+    const anio = hoy.getFullYear();
+    const mes = hoy.getMonth(); // 0-11
+    
+    //Calculamos los dias que tiene este mes
+    const dias_en_mes = new Date(anio, mes + 1, 0).getDate();
+    console.log(dias_en_mes);
+</script>
