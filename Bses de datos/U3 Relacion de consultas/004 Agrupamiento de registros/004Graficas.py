@@ -1,5 +1,9 @@
 
 import mysql.connector
+#import matplotlib      /Esto lo he usado porque no funcionaba antes
+#matplotlib.use('TkAgg')  # Use TkAgg for local environments
+import matplotlib.pyplot as pt
+
 
 conexion = mysql.connector.connect(
     host = "localhost",
@@ -25,3 +29,7 @@ for fila in filas:
     etiquetas.append(fila[1])
 print(cantidades)
 print(etiquetas)
+
+pt.pie(cantidades, labels=etiquetas)
+pt.show()
+
