@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MicoBlog</title>
+</head>
+
+<body>
+    <header><h1>El blog de Rodigo</h1></header>
+    <main></main>
+    <footer>(c) 2025 Rodrigo Menendez Molina</footer>
+
+    <script>
+        const articulos = [
+            "Primer articulo", "Segundo articulo", "Tercer articulo"
+        ];
+        const contenedor = document.querySelector("main");
+        //Recorrer los articulos y meterlos en el main
+        for(let i = 0; i<articulos.length; i++){
+            contenedor.innerHTML += "<h3>"+articulos[i]+"</h3>";
+        }
+    </script>
+</body>
+</html>
