@@ -1,0 +1,28 @@
+
+{   "datos_personales": {
+        "nombre": "Rodrigo",
+        "apellidos": "Menendez Molina",
+        "correo": "menendez.rodrigo555@gmail.com",
+        "telefono": "684011383"
+    },
+
+    "experiencias_laborales":[
+        {"titulo":"Monitor de scouts",
+        "empresa":"Grupo scout seeonee",
+        "fechas":"2025-Presente",
+        "descripcion":"Monitor de actividades de scouts"}
+
+    ],
+
+    "estudios":[
+        {"grado":"Grado superior en desarrollo de aplicaciones multiplataforaforma",
+        "centro":"CEAC FP Oficioal Valencia",
+        "fechas":"2025-Presente"
+        },
+        {"grado":"Bachillerato itinerario tecnologico",
+        "centro":"Escuelas San Jose Jesuitas",
+        "fechas":"2023-2025"
+        }
+    ]
+
+}

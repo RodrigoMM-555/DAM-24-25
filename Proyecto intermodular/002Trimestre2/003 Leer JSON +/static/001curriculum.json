@@ -1,0 +1,13 @@
+
+{   "datos_personales": {
+        "nombre": "Rodrigo",
+        "apellidos": "Menendez Molina",
+        "correo": "Algo@gmail.com",
+        "telefono": "666666666"
+    },
+    "experiencias_laborales":[
+        "experiencia1",
+        "experiencia2",
+        "experiencia3"
+    ]
+}

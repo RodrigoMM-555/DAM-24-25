@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla fetch</title>
+</head>
+<body>
+    <h1>[nombre]</h1>
+    <h2>[apellidos]</h2>
+    <h3>[correro]</h3>
+    <script>
+        //Ves y busca este archivo, te prometo que hay un archivo con ese nombre
+        fetch("static/001Curriculum.json")
+        .then(function(respuesta){
+            //Esto trae la respuesta en un objeto JSON
+            return respuesta.json();
+        })
+        .then(function(datos){
+            //Vomitamos en la consola
+            console.log(datos);
+            //Donde ponga h1 ponme el nombre del JSON
+            document.querySelector("h1").innerText = datos.datos_personales.nombre;
+            document.querySelector("h2").innerText = datos.datos_personales.apellidos;
+            document.querySelector("h3").innerText = datos.datos_personales.correo;
+        })
+    </script>
+    
+</body>
+</html>

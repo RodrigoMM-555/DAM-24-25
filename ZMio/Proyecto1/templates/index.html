@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>StickerLibrary</title>
+    <style>
+        body{background: lightgray; text-align: center; font-family: sans-serif;}
+        main{width: 1500px; margin: auto;}
+        header{
+            display: inline-block; 
+            background: turquoise; 
+            color: white;
+            border-radius: 15px;
+            padding: 0px 20px;
+        }
+        main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+        justify-items: stretch;
+        align-items: stretch;
+        justify-content: start;
+        align-content: start;
+        }    
+        footer{background: grey; padding: 1px; color: white; margin-top: 10px;}
+        article{margin: 10px; background: white; border-radius: 15px;}
+        article img{width: 90%; height: auto; margin: 10px; border-radius: 15px;}
+        article h3{background: darkorange; color: white; margin: 0; padding: 10px 0;}
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <h1>StickerLibrary</h1>
+    </header>
+    <main></main>
+    <footer>
+        <p>© 2025 -- StickerLibrary -- Rodrigo Menendez Molina</p>
+    </footer>
+
+    <script>
+        //Ves y busca este archivo, te prometo que hay un archivo con ese nombre
+        fetch("static/stickers.json")
+        .then(function(respuesta){
+            //Esto trae la respuesta en un objeto JSON
+            return respuesta.json();
+        })
+        .then(function(datos){
+            //Vomitamos en la consola
+            console.log(datos);
+            //Traemos los datos de la lista uno por uno
+            for (let i = 0; i < datos.length; i++) {
+
+            // Crear elementos
+            let article = document.createElement("article");
+            let h3 = document.createElement("h3");
+            let img = document.createElement("img");
+
+            // Rellenarlos
+            h3.innerText = datos[i].titulo;
+            img.src = datos[i].imagen;
+
+            // Añadir al article
+            article.appendChild(h3);
+            article.appendChild(img);
+
+            // Añadir al main
+            document.querySelector("main").appendChild(article);
+        }
+    })
+    </script>
+
+
+</body>
+</html>
+
+
+
+<!--        
+        <article>
+            <h3>Title</h3>
+            <img src="" alt="Nombre del esticker">
+        </article>
+-->

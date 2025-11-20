@@ -1,0 +1,47 @@
+[
+    {
+        "titulo": "Gato pulgar",
+        "imagen": "https://i.pinimg.com/originals/e7/d2/36/e7d236fad560f7355f84ec0d4227a6a5.png",
+        "descripcion": "Una cara sonriente para alegrar el día."
+    },
+    {
+        "titulo": "Corazón",
+        "imagen": "https://example.com/pegatinas/corazon.png",
+        "descripcion": "Un corazón rojo para expresar amor y cariño."
+    },
+    {
+        "titulo": "Pulgar arriba",
+        "imagen": "https://example.com/pegatinas/pulgar_arriba.png",
+        "descripcion": "Un pulgar hacia arriba para mostrar aprobación."
+    },
+    {
+        "titulo": "Corazón",
+        "imagen": "https://example.com/pegatinas/corazon.png",
+        "descripcion": "Un corazón rojo para expresar amor y cariño."
+    },
+    {
+        "titulo": "Pulgar arriba",
+        "imagen": "https://example.com/pegatinas/pulgar_arriba.png",
+        "descripcion": "Un pulgar hacia arriba para mostrar aprobación."
+    },
+    {
+        "titulo": "Corazón",
+        "imagen": "https://example.com/pegatinas/corazon.png",
+        "descripcion": "Un corazón rojo para expresar amor y cariño."
+    },
+    {
+        "titulo": "Pulgar arriba",
+        "imagen": "https://example.com/pegatinas/pulgar_arriba.png",
+        "descripcion": "Un pulgar hacia arriba para mostrar aprobación."
+    },
+    {
+        "titulo": "Corazón",
+        "imagen": "https://example.com/pegatinas/corazon.png",
+        "descripcion": "Un corazón rojo para expresar amor y cariño."
+    },
+    {
+        "titulo": "Pulgar arriba",
+        "imagen": "https://example.com/pegatinas/pulgar_arriba.png",
+        "descripcion": "Un pulgar hacia arriba para mostrar aprobación."
+    }
+]

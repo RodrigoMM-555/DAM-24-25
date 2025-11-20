@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>StickerLibrary</title>
+    <style>
+        body{background: lightgray; text-align: center; font-family: sans-serif;}
+        main{width: 1500px; background: ghostwhite; margin: auto;}
+        main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+        justify-items: stretch;
+        align-items: stretch;
+        justify-content: start;
+        align-content: start;
+        }    
+        article{margin: 10px;}
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <h1>StickerLibrary</h1>
+    </header>
+    <main></main>
+    <footer>
+        <p>© 2025 -- StickerLibrary -- Rodrigo Menendez Molina</p>
+    </footer>
+
+    <script>
+        //Ves y busca este archivo, te prometo que hay un archivo con ese nombre
+        fetch("static/stickers.json")
+        .then(function(respuesta){
+            //Esto trae la respuesta en un objeto JSON
+            return respuesta.json();
+        })
+        .then(function(datos){
+            //Vomitamos en la consola
+            console.log(datos);
+            //Traemos los datos de la lista uno por uno
+            for (let i = 0; i < datos.length; i++) {
+                document.querySelectorAll("h3")[i].innerText = datos[i].titulo;
+                document.querySelectorAll("img")[i].src = datos[i].imagen;
+            }
+        })
+    </script>
+
+
+</body>
+</html>
+
+
+
+<!--        
+        <article>
+            <h3>Title</h3>
+            <img src="" alt="Nombre del esticker">
+        </article>
+-->
