@@ -7,10 +7,10 @@
     <style>
         html, body{background: turquoise; width: 100%; height: 100%; padding: 0px; margin: 0px;}
         main{display: flex; height: 100%;}
-        header{padding: 20px; color: #f7ad1b;}
+        header{padding: 20px; color: #ffe860;}
         nav{flex:1; color: white; padding: 20px; display: flex; flex-direction: column; gap: 20px;}
         section{flex: 5; background: ghostwhite; padding: 20px;}
-        nav button{background: ghostwhite; color: #f3a407; padding: 10px;}
+        nav a{background: #60ffc8; color: #26665d; padding: 5px; border-radius: 5px;}
     </style>
 </head>
 
@@ -19,12 +19,36 @@
     
     <main>
         <nav>
-            <button>Clientes</button>
-            <button>Productos</button>
-            <button>Pedidos</button>
+            {%for tabla in mis_tablas:%}
+                <a>{{tabla}}</a>
+            {% endfor %}
         </nav>
         <section>
-            Hola
+            <style>
+                table{width: 100%; border: 2px solid turquoise; border-collapse:collapse;}
+                table th, table tr{padding: 10px;}
+                table td{color: #26665d;}
+                table thead{background: turquoise; color: white;}
+            </style>
+            <table>
+                <thead>
+                    <tr>
+                        {%for columna in mis_columnas:%}
+                            <th>{{columna}}</th>
+                        {% endfor %}
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for contenido in mi_contenido_tabla:%}
+                        <tr>
+                            {%for dato in contenido%}
+                                <td>{{dato}}</td>
+                            {%endfor%}
+                        </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
         </section>
     </main>
 </body>
