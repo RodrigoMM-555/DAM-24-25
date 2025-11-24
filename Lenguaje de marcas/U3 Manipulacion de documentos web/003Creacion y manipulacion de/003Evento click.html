@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <nav></nav>
+    <script>
+        let botones = ["clientes","productos","pedidos"];
+        let contenedor = document.querySelector("nav");
+
+        //Esto es como un for por cada elemento de botones crea un boton
+        botones.forEach(function(texto_boton){
+            let boton = document.createElement("button");
+            boton.textContent = "Pulsame";
+            contenedor.appendChild(boton);
+
+            //Genera un evento, el evento responde al pulsar el boton
+            boton.onclick = function(){
+                console.log("Has echo click en el boton");
+            };
+
+        });
+    </script>
+    
+</body>
+</html>
+

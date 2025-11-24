@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <nav></nav>
+    <script>
+        //Eso crea una lista
+        let botones = ["clientes","productos","pedidos"];
+        //Selecciono el contenedor
+        let contenedor = document.querySelector("nav");
+        //Creo un primer boton
+        let boton = document.createElement("button");
+        //Ahora le ponemos tecto el boto
+        boton.textContent = "Pulsame";
+        //Lo mostramos
+        contenedor.appendChild(boton);
+    </script>
+    
+</body>
+</html>
+
