@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <nav></nav>
+    <script>
+        //Ves y busca
+        //Busca este archivo
+        fetch("005botones.json")
+        //Recoge lo que te damos, que esta en json
+        .then(function(respuesta){
+            return respuesta.json();
+        })
+        //Muestra el json por pantalla
+        .then(function(datos){
+            console.log(datos);
+        })
+        //El .then usa lo que devuelve la vafunction anterior como variable
+    </script>
+    
+</body>
+</html>

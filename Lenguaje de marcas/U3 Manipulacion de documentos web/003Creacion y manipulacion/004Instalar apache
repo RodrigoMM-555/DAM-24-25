@@ -1,9 +1,14 @@
+Con esto podemos alojar servidores en nuestor localhost para que sigan corriendo. Si lo hacemos con el Go Live de visual estudio se cerrara en cuanto terminemos con visual
+
 En terminal:
 
 sudo apt install apache2
 
 De ahi en adelante, todos los archivos que hagáis tendrán que estar en:
 /var/www/html
+
+1.- Copiamos el archivo a la carpeta de var/www/html
+2.- A partir de ahi editamos el cdigo en esa carpeta
 
 Liberación de permisos:
 
