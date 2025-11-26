@@ -32,4 +32,4 @@ def inico():
 #Esto crea jsons con la info del diccionario, a sido accidental
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
