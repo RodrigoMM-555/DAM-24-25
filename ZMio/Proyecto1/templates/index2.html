@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>StickerLibrary</title>
+    <style>
+        h1{
+            background: rgb(48, 236, 174);
+            border-radius: 20px;
+        }
+        body {
+            background: lightgray;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        main {
+            width: 1500px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            grid-auto-flow: row;
+            justify-items: stretch;
+            align-items: stretch;
+            justify-content: start;
+            align-content: start;
+        }
+        footer {
+            background: grey;
+            padding: 1px;
+            color: white;
+            margin-top: 10px;
+        }
+        article {
+            margin: 10px;
+            background: white;
+            border-radius: 15px;
+            cursor: pointer; /* Para indicar que el sticker es clickeable */
+        }
+        article img {
+            width: 90%;
+            height: auto;
+            margin: 10px;
+            border-radius: 15px;
+        }
+        article h3 {
+            background: darkorange;
+            color: white;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        /* Estilo para el popup/modal */
+        .popup {
+            border-radius: 15px;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 60%;
+            max-width: 600px;
+            overflow: hidden; /* Evita que la imagen se salga del contenedor */
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Título del popup (h2) con fondo azul */
+        .popup h2 {
+            background: darkorange; /* Fondo naranja para el título */
+            color: white;
+            margin: 0;
+            padding: 10px 0;
+            border-radius: 10px;
+        }
+
+        /* Asegura que la imagen se ajuste correctamente dentro del popup */
+        #popup-image {
+            max-width: 100%; /* Asegura que la imagen no exceda el ancho del popup */
+            max-height: 400px; /* Limita la altura máxima de la imagen */
+            object-fit: contain; /* Mantiene la proporción de la imagen */
+            margin-top: 10px;
+        }
+
+        /* Botón de cerrar con fondo naranja */
+        .popup .close-btn {
+            background: darkorange; /* Color naranja como el título de los stickers */
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .popup .close-btn:hover {
+            background: #e68500; /* Sombra más oscura al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>StickerLibrary</h1>
+    </header>
+    <main></main>
+
+    <!-- Popup para mostrar la descripción del sticker -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2 id="popup-title"></h2>
+        <img id="popup-image" src="" alt="Sticker">
+        <p id="popup-description"></p>
+        <button class="close-btn" id="close-popup-btn">Cerrar</button>
+    </div>
+
+    <footer>
+        <p>© 2025 -- StickerLibrary -- Rodrigo Menendez Molina</p>
+    </footer>
+
+    <script>
+        fetch("static/stickers.json")
+        .then(function(respuesta){
+            return respuesta.json();
+        })
+        .then(function(datos){
+            // Traemos los datos de los stickers
+            for (let i = 0; i < datos.length; i++) {
+                // Crear elementos para cada sticker
+                let article = document.createElement("article");
+                let h3 = document.createElement("h3");
+                let img = document.createElement("img");
+
+                // Rellenarlos con los datos
+                h3.innerText = datos[i].titulo;
+                img.src = datos[i].imagen;
+
+                // Añadir evento de clic al artículo
+                article.addEventListener("click", function() {
+                    // Mostrar el popup con la descripción del sticker
+                    document.getElementById("popup-title").innerText = datos[i].titulo;
+                    document.getElementById("popup-image").src = datos[i].imagen;
+                    document.getElementById("popup-description").innerText = datos[i].descripcion;
+                    document.getElementById("popup").style.display = "block";
+                    document.getElementById("overlay").style.display = "block";
+                });
+
+                // Añadir los elementos al article
+                article.appendChild(h3);
+                article.appendChild(img);
+
+                // Añadir el article al main
+                document.querySelector("main").appendChild(article);
+            }
+        });
+
+        // Cerrar el popup cuando se haga clic en el botón de cierre o en el overlay
+        document.getElementById("close-popup-btn").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        });
+
+        // Cerrar el popup cuando se haga clic en el fondo oscuro
+        document.getElementById("overlay").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        });
+    </script>
+</body>
+</html>

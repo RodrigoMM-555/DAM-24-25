@@ -7,7 +7,7 @@ app = Flask(__name__)
 #Ruta principal
 @app.route('/')
 def incio():
-    return render_template('index.html')
+    return render_template('index4.html')
 
 #Ejecutamos la app
 if __name__ == '__main__':
