@@ -1,0 +1,18 @@
+
+3 tipos de cardinalidad
+
+1 - 1
+Un solo elemento de la lista se puede conectar con un solo
+elemento de otra lista
+    Una persona con un DNI
+
+1 - n
+Un solo elemento de una lista se pued conectar a más de un 
+elemento de otra lista
+    Un cliente con muchso pedidos
+
+n - n
+A muchos elementos de una lista le corresponden muchos 
+elementos de otra lista
+    Una asignatura puede tener varios alumnos
+    y un alumno puede tener varias asignaturas

@@ -1,0 +1,144 @@
+{
+  "formas": [
+    {
+      "id": "forma-1",
+      "tipo": "entity",
+      "left": "383.538px",
+      "top": "415.385px",
+      "width": "",
+      "height": "",
+      "entityName": "Cliente",
+      "properties": [
+        {
+          "id": "prop-1",
+          "name": "id"
+        },
+        {
+          "id": "prop-2",
+          "name": "nombre"
+        },
+        {
+          "id": "prop-3",
+          "name": "apellidos"
+        },
+        {
+          "id": "prop-4",
+          "name": "email"
+        }
+      ]
+    },
+    {
+      "id": "forma-4",
+      "tipo": "entity",
+      "left": "721.53px",
+      "top": "438.373px",
+      "width": "",
+      "height": "",
+      "entityName": "Pedido",
+      "properties": [
+        {
+          "id": "prop-9",
+          "name": "id"
+        },
+        {
+          "id": "prop-10",
+          "name": "fecha"
+        },
+        {
+          "id": "prop-11",
+          "name": "cliente_id"
+        }
+      ]
+    },
+    {
+      "id": "forma-5",
+      "tipo": "entity",
+      "left": "736.18px",
+      "top": "242.813px",
+      "width": "",
+      "height": "",
+      "entityName": "Producto",
+      "properties": [
+        {
+          "id": "prop-12",
+          "name": "id"
+        },
+        {
+          "id": "prop-13",
+          "name": "nombre"
+        },
+        {
+          "id": "prop-14",
+          "name": "precio"
+        }
+      ]
+    },
+    {
+      "id": "forma-6",
+      "tipo": "entity",
+      "left": "1085.42px",
+      "top": "325.883px",
+      "width": "",
+      "height": "",
+      "entityName": "LineaPedido",
+      "properties": [
+        {
+          "id": "prop-15",
+          "name": "id"
+        },
+        {
+          "id": "prop-16",
+          "name": "prodructo_id"
+        },
+        {
+          "id": "prop-17",
+          "name": "pedido_id"
+        }
+      ]
+    }
+  ],
+  "flechas": [
+    {
+      "desde": {
+        "shapeId": "forma-1",
+        "propId": "prop-1",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-4",
+        "propId": "prop-11",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-5",
+        "propId": "prop-12",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-6",
+        "propId": "prop-16",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-4",
+        "propId": "prop-9",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-6",
+        "propId": "prop-17",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    }
+  ]
+}
