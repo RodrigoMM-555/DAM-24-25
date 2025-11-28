@@ -1,0 +1,59 @@
+{
+  "formas": [
+    {
+      "id": "forma-7",
+      "tipo": "entity",
+      "left": "521px",
+      "top": "270px",
+      "width": "",
+      "height": "",
+      "entityName": "Alumno",
+      "properties": [
+        {
+          "id": "prop-18",
+          "name": "id"
+        },
+        {
+          "id": "prop-19",
+          "name": "nombre"
+        },
+        {
+          "id": "prop-20",
+          "name": "apellidos"
+        },
+        {
+          "id": "prop-21",
+          "name": "email"
+        }
+      ]
+    },
+    {
+      "id": "forma-8",
+      "tipo": "entity",
+      "left": "777px",
+      "top": "271px",
+      "width": "",
+      "height": "",
+      "entityName": "Profesor",
+      "properties": [
+        {
+          "id": "prop-22",
+          "name": "id"
+        },
+        {
+          "id": "prop-23",
+          "name": "nombre"
+        },
+        {
+          "id": "prop-24",
+          "name": "apellidos"
+        },
+        {
+          "id": "prop-25",
+          "name": "email"
+        }
+      ]
+    }
+  ],
+  "flechas": []
+}

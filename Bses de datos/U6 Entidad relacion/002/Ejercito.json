@@ -1,0 +1,136 @@
+{
+  "formas": [
+    {
+      "id": "forma-2",
+      "tipo": "entity",
+      "left": "711px",
+      "top": "221px",
+      "width": "",
+      "height": "",
+      "entityName": "Npc",
+      "properties": [
+        {
+          "id": "prop-1",
+          "name": "id"
+        },
+        {
+          "id": "prop-2",
+          "name": "x"
+        },
+        {
+          "id": "prop-3",
+          "name": "y"
+        },
+        {
+          "id": "prop-4",
+          "name": "z"
+        },
+        {
+          "id": "prop-9",
+          "name": "hp"
+        }
+      ]
+    },
+    {
+      "id": "forma-3",
+      "tipo": "entity",
+      "left": "424px",
+      "top": "453px",
+      "width": "",
+      "height": "",
+      "entityName": "Caballero",
+      "properties": [
+        {
+          "id": "prop-5",
+          "name": "id"
+        },
+        {
+          "id": "prop-8",
+          "name": "caballo"
+        }
+      ]
+    },
+    {
+      "id": "forma-4",
+      "tipo": "entity",
+      "left": "697px",
+      "top": "476px",
+      "width": "",
+      "height": "",
+      "entityName": "Lancero",
+      "properties": [
+        {
+          "id": "prop-6",
+          "name": "id"
+        }
+      ]
+    },
+    {
+      "id": "forma-5",
+      "tipo": "entity",
+      "left": "1001px",
+      "top": "480px",
+      "width": "",
+      "height": "",
+      "entityName": "Hechicero",
+      "properties": [
+        {
+          "id": "prop-7",
+          "name": "id"
+        },
+        {
+          "id": "prop-10",
+          "name": "mana"
+        },
+        {
+          "id": "prop-11",
+          "name": "hechizo"
+        }
+      ]
+    }
+  ],
+  "flechas": [
+    {
+      "desde": {
+        "shapeId": "forma-2",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-3",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-2",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-4",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-2",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-5",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    }
+  ]
+}
