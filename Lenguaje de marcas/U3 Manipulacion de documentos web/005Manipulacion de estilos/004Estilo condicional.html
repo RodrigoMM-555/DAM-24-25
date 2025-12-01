@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .rojo{background:rgb(255, 200, 200);}
+            .verde{background: rgb(200, 255, 200);}
+        </style>
+    </head>
+    <body>
+        <p>La entrada debe tener 9 caracteres</p>
+        <input class="rojo">
+        <script>
+            //Selecciono la netrada
+            let entrada = document.querySelector("input");
+            
+            //Cuando suelte la tecla revisara lo siguiente
+            entrada.onkeyup = function(){
+                //Cojo el valor de la entrada
+                let valor = this.value;
+                //Mido su longitud
+                let longitud = valor.length
+                //Si su longitud es mayor a 9
+                if (longitud == 9){
+                    this.classList.add("verde")
+                    this.classList.remove("rojo")
+                }
+                else{
+                    this.classList.add("rojo")
+                    this.classList.remove("verde")
+                }
+            //Cada vez que suelte una tecla el progrma revisara si lo escrito mide 9 caracteres.
+            }
+        </script>
+    </body>
+</html>
