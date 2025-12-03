@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Elemento raíz -->
+    <xs:element name="curriculum">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="datos_personales" type="DatosPersonalesType"/>
+                <xs:element name="descripcion" type="xs:string"/>
+                
+                <xs:element name="competencias">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="competencia" type="xs:string" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="contacto" type="ContactoType"/>
+
+                <xs:element name="formacion">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="estudio" type="FormacionType" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="experiencia">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="trabajo" type="ExperienciaType" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="idiomas">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="idioma" type="IdiomaType" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Tipos complejos -->
+
+    <xs:complexType name="DatosPersonalesType">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="apellido" type="xs:string"/>
+            <xs:element name="ocupacion" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ContactoType">
+        <xs:sequence>
+            <xs:element name="telefono" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="FormacionType">
+        <xs:sequence>
+            <xs:element name="fecha" type="xs:string"/>
+            <xs:element name="titulo" type="xs:string"/>
+            <xs:element name="centro" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ExperienciaType">
+        <xs:sequence>
+            <xs:element name="fecha" type="xs:string"/>
+            <xs:element name="puesto" type="xs:string"/>
+            <xs:element name="descripcion" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="IdiomaType">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="nivel" type="xs:string"/>
+            <xs:element name="organizacion" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

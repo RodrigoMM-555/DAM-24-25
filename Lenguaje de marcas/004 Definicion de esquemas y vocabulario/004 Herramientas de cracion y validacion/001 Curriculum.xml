@@ -1,78 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Curriculum>
-    <SeccionIzquierda>
-        <Foto src="img/Captura.png" />
+<curriculum>
+    <datosPersonales>
+        <nombre>Rodrigo Menéndez Molina</nombre>
+        <titulo>Estudiante y desarrollador</titulo>
+        <imagen>img/Captura.png</imagen>
+    </datosPersonales>
 
-        <DescripcionPersonal>
-            <Titulo>Descripción personal</Titulo>
-            <Texto>
-                Interesado en la programación, en busca de desarrollar sus conocimientos y aprender más sobre la industria.
-            </Texto>
-        </DescripcionPersonal>
+    <contacto>
+        <telefono>684011383</telefono>
+        <email>menendez.rodrigo555@gmail.com</email>
+    </contacto>
 
-        <Competencias>
-            <Titulo>Competencias</Titulo>
-            <Lista>
-                <Item>Buena comunicación</Item>
-                <Item>Ordenado</Item>
-                <Item>Manejo del tiempo</Item>
-                <Item>Trabajo en equipo</Item>
-                <Item>Puntual</Item>
-            </Lista>
-        </Competencias>
-    </SeccionIzquierda>
+    <descripcionPersonal>
+        Interesado en la programación, en busca de desarrollar sus conocimientos y aprender más sobre la industria.
+    </descripcionPersonal>
 
-    <SeccionDerecha>
-        <Nombre>Rodrigo Menéndez Molina</Nombre>
-        <TituloProfesional>Estudiante y desarrollador</TituloProfesional>
+    <competencias>
+        <competencia>Buena comunicación</competencia>
+        <competencia>Ordenado</competencia>
+        <competencia>Manejo del tiempo</competencia>
+        <competencia>Trabajo en equipo</competencia>
+        <competencia>Puntual</competencia>
+    </competencias>
 
-        <Contacto>
-            <Telefono icon="img/25453.png">684011383</Telefono>
-            <Email icon="img/26416.png">menendez.rodrigo555@gmail.com</Email>
-        </Contacto>
+    <formacion>
+        <estudio>
+            <periodo>2025 - 2027 (Actual)</periodo>
+            <titulo>Grado superior en desarrollo de aplicaciones multiplataforma (DAM)</titulo>
+            <centro>Instituto CEAC FP</centro>
+        </estudio>
 
-        <Formacion>
-            <Titulo>Formación</Titulo>
+        <estudio>
+            <periodo>2022 - 2024</periodo>
+            <titulo>Bachiller itinerario tecnológico</titulo>
+            <centro>Escuelas San José Jesuitas</centro>
+        </estudio>
+    </formacion>
 
-            <Estudio>
-                <Periodo>Actualmente cursando 2025 - 2027</Periodo>
-                <NombreTitulo>Grado superior en desarrollo de aplicaciones multiplataforma (DAM)</NombreTitulo>
-                <Centro>Instituto CEAC FP</Centro>
-            </Estudio>
+    <experiencia>
+        <puesto>
+            <periodo>2025</periodo>
+            <titulo>Monitor de tiempo libre</titulo>
+            <descripcion>
+                Soy monitor en el grupo scout Seeonee del MEV. Tengo reuniones semanales para preparar actividades
+                y dinámicas, trabajando constantemente en equipo y comunicándome con mis compañeros. Además, el
+                trabajo requiere empatía para tratar con los niños y niñas del grupo.
+            </descripcion>
+        </puesto>
+    </experiencia>
 
-            <Estudio>
-                <Periodo>2022 - 2024</Periodo>
-                <NombreTitulo>Bachiller itinerario tecnológico</NombreTitulo>
-                <Centro>Escuelas San Jose Jesuitas</Centro>
-            </Estudio>
-        </Formacion>
-
-        <ExperienciaLaboral>
-            <Titulo>Experiencia laboral</Titulo>
-
-            <Trabajo>
-                <Periodo>2025</Periodo>
-                <Puesto>Monitor de tiempo libre</Puesto>
-                <Descripcion>
-                    Soy monitor en el grupo scout Seeonee del MEV. Tengo reuniones todas las semanas para preparar actividades 
-                    y dinámicas, trabajando en grupo y comunicándome con mis compañeros. Además, el trabajo requiere empatía 
-                    para tratar con los niños y niñas del grupo.
-                </Descripcion>
-            </Trabajo>
-        </ExperienciaLaboral>
-
-        <Idiomas>
-            <Titulo>Idiomas</Titulo>
-            <Idioma>
-                <Nombre>Inglés</Nombre>
-                <Nivel>B2</Nivel>
-                <Organizacion>Cambridge</Organizacion>
-            </Idioma>
-            <Idioma>
-                <Nombre>Valenciano</Nombre>
-                <Nivel>C1</Nivel>
-                <Organizacion>Generalitat Valenciana</Organizacion>
-            </Idioma>
-        </Idiomas>
-    </SeccionDerecha>
-</Curriculum>
+    <idiomas>
+        <idioma>
+            <nombre>Inglés</nombre>
+            <nivel>B2</nivel>
+            <organizacion>Cambridge</organizacion>
+        </idioma>
+        <idioma>
+            <nombre>Valenciano</nombre>
+            <nivel>C1</nivel>
+            <organizacion>Generalitat Valenciana</organizacion>
+        </idioma>
+    </idiomas>
+</curriculum>
