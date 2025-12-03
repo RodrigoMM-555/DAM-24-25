@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Curriculum>
+    <SeccionIzquierda>
+        <Foto src="img/Captura.png" />
+
+        <DescripcionPersonal>
+            <Titulo>Descripción personal</Titulo>
+            <Texto>
+                Interesado en la programación, en busca de desarrollar sus conocimientos y aprender más sobre la industria.
+            </Texto>
+        </DescripcionPersonal>
+
+        <Competencias>
+            <Titulo>Competencias</Titulo>
+            <Lista>
+                <Item>Buena comunicación</Item>
+                <Item>Ordenado</Item>
+                <Item>Manejo del tiempo</Item>
+                <Item>Trabajo en equipo</Item>
+                <Item>Puntual</Item>
+            </Lista>
+        </Competencias>
+    </SeccionIzquierda>
+
+    <SeccionDerecha>
+        <Nombre>Rodrigo Menéndez Molina</Nombre>
+        <TituloProfesional>Estudiante y desarrollador</TituloProfesional>
+
+        <Contacto>
+            <Telefono icon="img/25453.png">684011383</Telefono>
+            <Email icon="img/26416.png">menendez.rodrigo555@gmail.com</Email>
+        </Contacto>
+
+        <Formacion>
+            <Titulo>Formación</Titulo>
+
+            <Estudio>
+                <Periodo>Actualmente cursando 2025 - 2027</Periodo>
+                <NombreTitulo>Grado superior en desarrollo de aplicaciones multiplataforma (DAM)</NombreTitulo>
+                <Centro>Instituto CEAC FP</Centro>
+            </Estudio>
+
+            <Estudio>
+                <Periodo>2022 - 2024</Periodo>
+                <NombreTitulo>Bachiller itinerario tecnológico</NombreTitulo>
+                <Centro>Escuelas San Jose Jesuitas</Centro>
+            </Estudio>
+        </Formacion>
+
+        <ExperienciaLaboral>
+            <Titulo>Experiencia laboral</Titulo>
+
+            <Trabajo>
+                <Periodo>2025</Periodo>
+                <Puesto>Monitor de tiempo libre</Puesto>
+                <Descripcion>
+                    Soy monitor en el grupo scout Seeonee del MEV. Tengo reuniones todas las semanas para preparar actividades 
+                    y dinámicas, trabajando en grupo y comunicándome con mis compañeros. Además, el trabajo requiere empatía 
+                    para tratar con los niños y niñas del grupo.
+                </Descripcion>
+            </Trabajo>
+        </ExperienciaLaboral>
+
+        <Idiomas>
+            <Titulo>Idiomas</Titulo>
+            <Idioma>
+                <Nombre>Inglés</Nombre>
+                <Nivel>B2</Nivel>
+                <Organizacion>Cambridge</Organizacion>
+            </Idioma>
+            <Idioma>
+                <Nombre>Valenciano</Nombre>
+                <Nivel>C1</Nivel>
+                <Organizacion>Generalitat Valenciana</Organizacion>
+            </Idioma>
+        </Idiomas>
+    </SeccionDerecha>
+</Curriculum>
