@@ -2,12 +2,11 @@ from flask import Flask, render_template, request
 import io
 import contextlib
 
-
 app = Flask(__name__)
 
 @app.route("/")
 def inicio():
-  return render_template("index.html")
+    return render_template("index1.html")
 
 @app.route("/api", methods=['POST'])
 def api():
@@ -17,13 +16,13 @@ def api():
     try:
         # Ejecuta el código y captura todo lo que se imprima
         with contextlib.redirect_stdout(buffer):
-            exec(codigo, {})   # entorno global vacío (peligroso igualmente si no controlas el código)
+            exec(codigo, {})
     except Exception as e:
+        # devolvemos el error como texto y código 400
         return str(e), 400
 
     salida = buffer.getvalue()
-    # Si no ha habido nada por pantalla, puedes devolver algo por defecto
     return salida if salida else "OK"
 
 if __name__ == "__main__":
-  app.run(debug=True)
+    app.run(debug=True)
