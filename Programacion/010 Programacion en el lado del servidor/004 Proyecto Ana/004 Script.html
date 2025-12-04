@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <style>
+            #editor{
+                font-family:monospace;
+                background:lightgray;color:black;padding:20px;
+                width:800px;
+                height:500px;
+                margin:auto;
+                margin-bottom:10px;
+
+            }
+            #terminal{
+                font-family:monospace;
+                background:black;color:white;padding:20px;
+                width:800px;
+                height:100px;
+                margin:auto;
+                margin-bottom:10px;
+            }
+            .ventana{
+                border: 1px solid gray; 
+                border-top: 30px solid gray;
+                border-radius: 5px;
+                box-shadow: 0px 5px 10px black;
+            }
+            button{
+                margin:auto;background:green;
+                color:white;padding:10px;border-radius:5px;border:none;
+                margin:auto;margin-bottom:10px;display:block;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <div id="editor" contenteditable=true class="ventana"></div>
+            <button>Compilar</button>
+            <div id="terminal" contenteditable=true class="ventana"></div>
+        </main>
+        <footer></footer>
+        <script>
+            let boton = document.querySelector("button")
+            boton.onclik = function(){
+                console.log("Vamos a enviar algo al servidor")
+                let codigo = document.querySelector("#editor").textContent
+                console.log(codigo)
+                fetch("/api", {
+                    method: "POST",
+                    headers: {
+                            "Content-Type": "text/plain"
+                    },
+                    body: codigo
+                })
+                .then(response => response.text())
+                .then(data => console.log(data));
+            };
+        </script>
+    </body>
+</html>
+
