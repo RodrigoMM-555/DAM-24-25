@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        // Abstracto implicito, no tiene sentido instanciar
+        class Ser{
+            constructor(edad){
+                this.edad = edad
+            }
+        }
+        //Abstracto implicito, no tiene sentido instanciar
+        class Animal extends Ser{
+            constructor(especie){
+                super();
+                this.especie = especie;
+
+            }
+        }
+        //Concreto, tiene sentido instanciar
+        class Perro extends Animal{
+            constructor(color){
+                super()
+                this.color = color;
+            }
+        }
+        // Coje las propiedades de abajo hacia arriba de la familia (hijo -> madre -> abuela)
+        let Perro1 = new Perro("blanco");
+        console.log(Perro1)
+    </script>
+</body>
+</html>
+

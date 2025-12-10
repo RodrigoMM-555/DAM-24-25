@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            #azul{
+                width:50px;height:50px;background:blue;border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            let posx = 0;
+            let posy = 0;
+            let a = 0;
+            document.onkeydown = function(tecla){
+                switch(tecla.key){
+                    case "w":
+                        console.log("Movemos el personaje hacia arriba");
+                        posy -=10
+                        break;
+                    case "s":
+                        console.log("Movemos el personaje hacia abajo");
+                        posy +=10
+                        break;
+                    case "a":
+                        console.log("Movemos el personaje hacia la izquierda");
+                        posx -=10
+                        break;
+                    case "d":
+                        console.log("Movemos el personaje hacia la derecha");
+                        posx +=10
+                        break;
+                    case "q":
+                        a -= 15
+                        break
+                    case "e":
+                        a += 15
+                }
+                document.querySelector("#azul").style.transform = "translate("+posx+"px,"+posy+"px) rotate("+a+"deg)"
+            }
+            document.onmousedown = function(){
+                console.log("Disparemos");
+            }
+        </script>
+        <div id="azul"></div>
+    </body>
+</html>
