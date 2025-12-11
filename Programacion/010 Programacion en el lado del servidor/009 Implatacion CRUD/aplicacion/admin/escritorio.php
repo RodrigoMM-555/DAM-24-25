@@ -6,7 +6,8 @@
         <title>El jocarsa - Panel de control</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/estilo.css">
-        <style>/* ESTILOS GENERALES /////////////  */
+        <style>
+            /* ESTILOS GENERALES /////////////  */
             html,body{
                 width:100%;
                 height:100%;
@@ -53,6 +54,33 @@
             table td,table th{
                 padding:5px;
             }
+            #nuevo{
+                position:absolute;
+                bottom:20px;
+                right:20px;
+                background:teal;
+                color:white;
+                width:30px;
+                height:30px;
+                border-radius:40px;
+                text-align:center;
+                font-size:30px;
+                line-height:30px;
+                text-decoration:none;
+                font-weight:bold;
+            }
+            /* ESTILOS DEL FORMULARIO /////////////  */
+            form{
+                display:flex;
+                width:100%;
+                flex-direction:column;
+                gap:20px;
+            }
+            .controlformulario{
+                display:flex;
+                width:100%;
+                flex-direction:column;
+            }
         </style>
     </head>
     <body>
@@ -61,7 +89,16 @@
             <button>Autores</button>
         </nav>
         <main>
-            <?php include "inc/read/leer.php"; ?>
+            <?php
+                if(isset($_GET['accion'])){							// Si hay "accion" en la URL
+                    if($_GET['accion'] == "nuevo"){					// Si la acción es "nuevo"
+                    include "inc/create/formulario.php";	        // En ese caso mete el formulario
+                }
+                }else{													// En caso contrario
+                    include "inc/read/leer.php"; 						// Enseñame la tabla
+                }
+            ?>
+            <a href="?accion=nuevo" id="nuevo">+</a>
         </main>
     </body>
 </html>
