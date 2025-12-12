@@ -58,7 +58,7 @@
                 position:absolute;
                 bottom:20px;
                 right:20px;
-                background:teal;
+                background:green;
                 color:white;
                 width:30px;
                 height:30px;
@@ -69,6 +69,29 @@
                 text-decoration:none;
                 font-weight:bold;
             }
+            .eliminar{
+                width:20px;
+                height:20px;
+                background:red;
+                border-radius:30px;
+                color:white;
+                line-height:20px;
+                text-decoration:none;
+                display:block;
+                text-align:center;
+            }
+            .editar{
+                width:20px;
+                height:20px;
+                background:gold;
+                border-radius:30px;
+                color:white;
+                line-height:20px;
+                text-decoration:none;
+                display:block;
+                text-align:center;
+            }
+
             /* ESTILOS DEL FORMULARIO /////////////  */
             form{
                 display:flex;
@@ -90,11 +113,19 @@
         </nav>
         <main>
             <?php
+            //Esto es un router en php
                 if(isset($_GET['accion'])){							// Si hay "accion" en la URL
                     if($_GET['accion'] == "nuevo"){					// Si la acción es "nuevo"
                     include "inc/create/formulario.php";	        // En ese caso mete el formulario
+                    }
+                    elseif($_GET["accion"] == "eliminar"){
+                    include "inc/delete/eliminar.php";
+                    }
+                    elseif($_GET["accion"] == "editar"){
+                    include "inc/update/actualizarformulario.php";
+                    }
                 }
-                }else{													// En caso contrario
+                else{													// En caso contrario
                     include "inc/read/leer.php"; 						// Enseñame la tabla
                 }
             ?>
