@@ -1,0 +1,3 @@
+@echo off
+exho Hola mundo dsde CMD
+pause
