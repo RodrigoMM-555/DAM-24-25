@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Completa JS</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        nav { margin-bottom: 20px; }
+        button { margin-right: 5px; margin-bottom: 5px; }
+        table { border-collapse: collapse; margin-top: 20px; }
+        table, th, td { border: 1px solid black; padding: 5px; }
+        #jugador { width: 30px; height: 30px; background: red; position: absolute; transition: all 0.5s; }
+        .cuadrado, .circulo { width: 50px; height: 50px; position: absolute; cursor: pointer; }
+        .cuadrado { border-radius: 0; }
+        .circulo { border-radius: 50%; }
+    </style>
+</head>
+<body>
+
+<nav></nav>
+
+<div id="contenedor"></div>
+
+<main>
+    <table></table>
+</main>
+
+<div id="jugador"></div>
+
+<button id="pulsa_cuadrado">Crear cuadrado</button>
+<button id="pulsa_circulo">Crear círculo</button>
+
+<script>
+    // 1. Crear botones dinámicamente con evento click
+    let botones = ['Clientes', 'Productos', 'Pedidos'];
+    let nav = document.querySelector("nav");
+    botones.forEach(function(texto){
+        let boton = document.createElement("button");
+        boton.textContent = texto;
+        nav.appendChild(boton);
+        boton.onclick = function(){ console.log(`Has hecho click en ${texto}`); }
+    });
+
+    // 2. Crear un párrafo dinámicamente
+    let contenedor = document.querySelector("#contenedor");
+    let parrafo = document.createElement("p");
+    parrafo.textContent = "¡Hola! Soy un párrafo dinámico. Haz click para eliminarme.";
+    contenedor.appendChild(parrafo);
+    parrafo.onclick = function(){ this.remove(); }
+
+    // 3. Crear tabla dinámica con filas eliminables
+    let tabla = document.querySelector("table");
+    for(let i=1; i<=10; i++){
+        let fila = document.createElement("tr");
+        fila.innerHTML = `<td>Fila ${i} - Col 1</td><td>Fila ${i} - Col 2</td><td>Fila ${i} - Col 3</td>`;
+        tabla.appendChild(fila);
+        fila.onclick = function(){ this.remove(); }
+    }
+
+    // 4. Crear elementos con posición y color aleatorios
+    let botonCuadrado = document.querySelector("#pulsa_cuadrado");
+    let botonCirculo = document.querySelector("#pulsa_circulo");
+    botonCuadrado.onclick = function(){ crearElemento("cuadrado"); }
+    botonCirculo.onclick = function(){ crearElemento("circulo"); }
+
+    function crearElemento(tipo){
+        let elem = document.createElement("div");
+        elem.classList.add(tipo);
+        elem.style.left = Math.random()*500 + "px";
+        elem.style.top = Math.random()*500 + "px";
+        let r = Math.round(Math.random()*255);
+        let g = Math.round(Math.random()*255);
+        let b = Math.round(Math.random()*255);
+        elem.style.background = `rgb(${r},${g},${b})`;
+        document.body.appendChild(elem);
+        elem.onclick = function(){ this.remove(); }
+    }
+
+    // 5. Temporizador para mostrar mensaje
+    setTimeout(()=>console.log("¡Mensaje retrasado 5 segundos!"), 5000);
+
+    // 6. Movimiento aleatorio del jugador
+    let jugador = document.querySelector("#jugador");
+    let posX = 200, posY = 200;
+    function moverJugador(){
+        posX += (Math.random()-0.5)*50;
+        posY += (Math.random()-0.5)*50;
+        jugador.style.left = posX + "px";
+        jugador.style.top = posY + "px";
+        setTimeout(moverJugador, 1000);
+    }
+    moverJugador();
+
+    // 7. Simulación de consumo de JSON para tabla
+    let datos = [
+        ["ID","Nombre","Precio"],
+        [1,"Producto A",10],
+        [2,"Producto B",15],
+        [3,"Producto C",20]
+    ];
+    let tablaJson = document.createElement("table");
+    document.body.appendChild(tablaJson);
+    datos.forEach((filaDatos)=>{
+        let fila = document.createElement("tr");
+        filaDatos.forEach((celda)=>{
+            let td = document.createElement("td");
+            td.textContent = celda;
+            fila.appendChild(td);
+        });
+        tablaJson.appendChild(fila);
+    });
+
+</script>
+
+</body>
+</html>
