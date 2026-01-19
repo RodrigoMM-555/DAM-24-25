@@ -1,0 +1,222 @@
+{
+  "formas": [
+    {
+      "id": "forma-14",
+      "tipo": "rectangle",
+      "left": "759px",
+      "top": "462.083px",
+      "width": "",
+      "height": "",
+      "texto": "Formulario de inscripcion"
+    },
+    {
+      "id": "forma-15",
+      "tipo": "rectangle",
+      "left": "973px",
+      "top": "461.083px",
+      "width": "",
+      "height": "",
+      "texto": "Tabla de espera"
+    },
+    {
+      "id": "forma-18",
+      "tipo": "rectangle",
+      "left": "1138px",
+      "top": "464.083px",
+      "width": "",
+      "height": "",
+      "texto": "Se les cosntacta"
+    },
+    {
+      "id": "forma-19",
+      "tipo": "rectangle",
+      "left": "1273px",
+      "top": "393.083px",
+      "width": "",
+      "height": "",
+      "texto": "Rechazo"
+    },
+    {
+      "id": "forma-20",
+      "tipo": "rectangle",
+      "left": "1275px",
+      "top": "533.083px",
+      "width": "",
+      "height": "",
+      "texto": "Aceptacion"
+    },
+    {
+      "id": "forma-21",
+      "tipo": "rectangle",
+      "left": "1271px",
+      "top": "314.083px",
+      "width": "",
+      "height": "",
+      "texto": "Eliminacion"
+    },
+    {
+      "id": "forma-22",
+      "tipo": "rectangle",
+      "left": "1438px",
+      "top": "529.083px",
+      "width": "",
+      "height": "",
+      "texto": "Inscripcion en el grupo"
+    },
+    {
+      "id": "forma-23",
+      "tipo": "rectangle",
+      "left": "1456px",
+      "top": "608.083px",
+      "width": "",
+      "height": "",
+      "texto": "Estado"
+    },
+    {
+      "id": "forma-24",
+      "tipo": "rectangle",
+      "left": "1346px",
+      "top": "678.083px",
+      "width": "",
+      "height": "",
+      "texto": "Pagado"
+    },
+    {
+      "id": "forma-25",
+      "tipo": "rectangle",
+      "left": "1554px",
+      "top": "674.083px",
+      "width": "",
+      "height": "",
+      "texto": "Sin Pagar"
+    }
+  ],
+  "flechas": [
+    {
+      "desde": {
+        "shapeId": "forma-14",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-15",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-15",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-18",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-18",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-20",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-18",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-19",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-19",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-21",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-20",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-22",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-22",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-23",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-23",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-24",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-23",
+        "propId": null,
+        "side": null
+      },
+      "hasta": {
+        "shapeId": "forma-25",
+        "propId": null,
+        "side": null
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    }
+  ]
+}

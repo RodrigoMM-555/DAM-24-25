@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplication</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Aplicación Web</h1>
+        <form action="">
+            <input type="text" placeholder="Buscar...">
+            <button type="submit">Buscar</button>
+        </form>
+        <div>
+            <p>icono1</p>
+            <p>icono2</p>
+            <p>icono3</p>
+        </div>
+    </header>
+    <main>
+        <section id="izquierda">
+            <nav>
+                <ul>
+                    <p>1</p>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Servicios</a></li>
+                </ul>
+                <ul>
+                    <p>2</p>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Soporte</a></li>
+                </ul>
+                <ul>
+                    <p>3</p>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Mapa del Sitio</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section id="derecha">
+            <article>
+                <h1>1</h1>
+            </article>
+            <article class="largo">
+                <h1>2</h1>
+            </article>
+            <article>
+                <h1>3</h1>
+            </article>
+            <article class="alto">
+                <h1>4</h1>
+            </article>
+            <article>
+                <h1>5</h1>
+            </article>
+            <article>
+                <h1>6</h1>
+            </article>
+            <article>
+                <h1>7</h1>
+            </article>
+            <article class="grande">
+                <h1>8</h1>
+            </article>
+            <article>
+                <h1>9</h1>
+            </article>
+            <article>
+                <h1>10</h1>
+            </article>
+            <article>
+                <h1>11</h1>
+            </article>
+            <article>
+                <h1>12</h1>
+            </article>
+            <article>
+                <h1>13</h1>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
+
+<style>
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: lightgray;
+        padding: 10px;
+    }
+    header div {
+        display: flex;
+        gap: 10px;
+    }
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    a, p {
+        text-decoration: none;
+        color: white;
+    }
+    main {
+        display: flex;
+    }
+    #izquierda {
+        padding: 10px;
+        flex: 1;
+        background: darkred;
+    }
+    #derecha {
+        flex: 7;
+        background: darkcyan;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #derecha article {
+        background: lightgray;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #derecha article.largo {
+        grid-column: span 2;
+    }
+    #derecha article.alto {
+        grid-row: span 2;
+    }
+    #derecha article.grande {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+</style>

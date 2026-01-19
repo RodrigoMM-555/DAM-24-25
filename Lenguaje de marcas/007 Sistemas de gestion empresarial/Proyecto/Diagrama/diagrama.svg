@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="994.9999999999999" height="483.99998474121094" viewBox="0 0 994.9999999999999 483.99998474121094">
+
+  <defs>
+    <style>
+      text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 12px; fill: #111827; }
+      .shape-rect { fill: #ffffff; stroke: #9ca3af; stroke-width: 1; }
+      .shape-entity { fill: #ffffff; stroke: #111827; stroke-width: 2; }
+      .shape-circle { fill: #ffffff; stroke: #9ca3af; stroke-width: 1; }
+      .shape-pill { fill: #ffffff; stroke: #9ca3af; stroke-width: 1; }
+      .shape-db { fill: #ffffff; stroke: #9ca3af; stroke-width: 1; }
+      .conn { stroke: #111827; stroke-width: 2; fill: none; }
+    </style>
+    <marker id="arrow-end" markerWidth="10" markerHeight="7" refX="10" refY="3.5"
+            orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#111827"/>
+    </marker>
+    <marker id="arrow-start" markerWidth="10" markerHeight="7" refX="0" refY="3.5"
+            orient="auto" markerUnits="strokeWidth">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#111827"/>
+    </marker>
+  </defs>
+        
+<rect class="shape-rect" x="40" y="187.99998474121094" width="168.6666717529297" height="40" rx="4" ry="4" />
+<text x="124.33333587646484" y="211.99998474121094" text-anchor="middle">Formulario de inscripcion</text>
+<rect class="shape-rect" x="254" y="186.99998474121094" width="120" height="40" rx="4" ry="4" />
+<text x="314" y="210.99998474121094" text-anchor="middle">Tabla de espera</text>
+<rect class="shape-rect" x="418.9999999999999" y="189.99998474121094" width="120" height="40" rx="4" ry="4" />
+<text x="478.9999999999999" y="213.99998474121094" text-anchor="middle">Se les cosntacta</text>
+<rect class="shape-rect" x="553.9999999999999" y="119" width="120" height="40" rx="4" ry="4" />
+<text x="613.9999999999999" y="143" text-anchor="middle">Rechazo</text>
+<rect class="shape-rect" x="555.9999999999999" y="258.99998474121094" width="120" height="40" rx="4" ry="4" />
+<text x="615.9999999999999" y="282.99998474121094" text-anchor="middle">Aceptacion</text>
+<rect class="shape-rect" x="551.9999999999999" y="40" width="120" height="40" rx="4" ry="4" />
+<text x="611.9999999999999" y="64" text-anchor="middle">Eliminacion</text>
+<rect class="shape-rect" x="718.9999999999999" y="254.99998474121094" width="153.4499969482422" height="40" rx="4" ry="4" />
+<text x="795.724998474121" y="278.99998474121094" text-anchor="middle">Inscripcion en el grupo</text>
+<rect class="shape-rect" x="736.9999999999999" y="333.99998474121094" width="120" height="40" rx="4" ry="4" />
+<text x="796.9999999999999" y="357.99998474121094" text-anchor="middle">Estado</text>
+<rect class="shape-rect" x="626.9999999999999" y="403.99998474121094" width="120" height="40" rx="4" ry="4" />
+<text x="686.9999999999999" y="427.99998474121094" text-anchor="middle">Pagado</text>
+<rect class="shape-rect" x="834.9999999999999" y="399.99998474121094" width="120" height="40" rx="4" ry="4" />
+<text x="894.9999999999999" y="423.99998474121094" text-anchor="middle">Sin Pagar</text>
+<path class="conn" d="M 208.6666717529297 207.55534500303565 L 253.9999999999999 207.3163292094245" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 373.9999999999999 208.09089383212 L 418.9999999999999 208.90907565030187" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 518.7101449275361 229.99998474121094 L 576.2898550724636 258.99998474121094" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 517.0281771868159 189.99998474121094 L 575.9718228131838 159" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 613.4936708860758 119 L 612.5063291139239 80" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 675.9999999999999 277.66461124260127 L 718.9999999999999 276.70759356859776" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 796.047783670546 294.99998474121094 L 796.6772148035749 333.99998474121094" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 765.5714285714286 373.99998474121094 L 718.4285714285712 403.99998474121094" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 826.6969696969696 373.99998474121094 L 865.3030303030301 399.99998474121094" marker-end="url(#arrow-end)" />
+</svg>
