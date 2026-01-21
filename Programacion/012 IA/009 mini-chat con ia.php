@@ -7,8 +7,8 @@
         main{width:500px;height:500px;padding:20px;border:1px solid grey;background: lightgray;
         border-radius:50px 50px 0px 0px;display:flex;flex-direction:column;justify-content:space-between;}
         input{width:100%;padding:10px;box-sizing:border-box;}
-        article{background:lightgreen;padding:20px;border-radius:20px 0px 20px 20px;}
-        article.blue{background:lightblue; margin-bottom: 20px;}
+        article{background:lightgreen;padding:20px;border-radius:0px 20px 20px 20px;}
+        article.blue{background:lightblue; margin-bottom: 20px;border-radius:20px 0px 0px 0px}
     </style>
   </head>
   <body>
