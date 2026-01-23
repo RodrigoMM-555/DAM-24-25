@@ -1,0 +1,33 @@
+{
+    "cliente": {
+        "nombre":"Rodrigo",
+        "apellidos":"Menendez Molina",
+        "email":"aja@gmail.com"
+    },
+    "datos_factura": {
+        "fecha":"2026-01-23",
+        "numero_factura":"2026-0001"
+    },
+    "lineas_factura": [
+        {
+            "nombre":"zapatillas",
+            "precio":59.99,
+            "cantidad":1
+        },
+        {
+            "nombre":"camiseta",
+            "precio":15.99,
+            "cantidad":2
+        },
+        {
+            "nombre":"pantalon",
+            "precio":35.50,
+            "cantidad":1
+        }
+    ],
+    "totales": {
+        "base_imponible":127.47,
+        "iva":26.82,
+        "total":154.29
+    }
+}
