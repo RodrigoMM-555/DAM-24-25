@@ -5,7 +5,7 @@ import os
 SMTP_SERVER = "smtp.gmx.com"
 SMTP_PORT = 587          # 587 = STARTTLS, 465 = SSL
 SMTP_USER = "menendez.rodrigo555@gmx.es"
-SMTP_PASS = "2KXXDQ7BL5P7PSEJD47J"
+SMTP_PASS = "-"
 
 msg = EmailMessage()
 msg["From"] = "menendez.rodrigo555@gmx.es"
