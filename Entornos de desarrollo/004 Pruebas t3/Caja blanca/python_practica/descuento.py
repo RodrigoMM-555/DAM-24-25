@@ -6,9 +6,11 @@ def calcular_descuento(precio, cliente_vip):
     else:
         descuento = precio * 0.10
     precio_final = precio - descuento
-    # ERROR: esta condición nunca se cumple en las pruebas
+
+    # Ahora si despues del descuento sigue valiendo mas de 500, aplicamos el descuento extra
     if precio_final > 500:
         precio_final -= 50
+
     return precio_final
 def descuento_especial(precio):
     # FUNCIÓN QUE NO SE PRUEBA
