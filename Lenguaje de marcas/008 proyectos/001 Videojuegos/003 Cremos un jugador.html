@@ -14,7 +14,12 @@
             }
 
             //Condiciones globales de inico
+            var lienzo = document.querySelector("canvas")
+            var contexto = lienzo.getContext("2d")
+            lienzo.width = 512
+            lienzo.height = 512
             var temporizador;
+            var jugador = new Jugador();
             inicio()
 
             // Funcion de inicio
