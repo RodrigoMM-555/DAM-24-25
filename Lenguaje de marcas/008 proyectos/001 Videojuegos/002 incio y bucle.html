@@ -1,0 +1,29 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <canvas></canvas>
+        <script>
+            // Declaracion de clases
+            //Condiciones globales de inico
+            var temporizador;
+            inicio()
+
+            // Funcion de inicio
+            function incio(){
+                console.log = ("Yo soy el incio")
+                temporizador = setTimeout("bucle()",1000);
+            }
+            
+            // Funcion de bucle
+            function bucle(){
+                clearTimeout(temporizador)
+                temporizador = setTimeout("bucle()",1000)
+            }
+
+            // Manejadores de eventos
+
+        </script>
+    </body>
+</html>
