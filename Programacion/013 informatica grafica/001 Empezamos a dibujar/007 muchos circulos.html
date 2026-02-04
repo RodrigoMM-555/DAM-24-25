@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lienzo</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        let lienzo = document.querySelector("canvas");
+        let contexto = lienzo.getContext("2d");
+        lienzo.width = 800;
+        lienzo.height = 800;
+
+        for (let i = 0; i < 200; i++) {
+            // Posicion y tamaño aleatorio
+            let x = Math.random() * lienzo.width;
+            let y = Math.random() * lienzo.height;
+            let radio = Math.random() * 50;
+
+            // Color aleatorio
+            let rojo = Math.round(Math.random() * 255);     // Es entre 0 y 255 porque el RGB
+            let verde = Math.round(Math.random() * 255);
+            let azul = Math.round(Math.random() * 255);
+            contexto.fillStyle = "rgb(" + rojo + ", " + verde + "," + azul + ")";
+
+            contexto.beginPath();
+            contexto.arc(x, y, radio, 0, Math.PI * 2);
+            contexto.fill();
+        }
+        // Circulo
+        contexto.fillStyle = "green"; // cambiar el color de relleno
+        contexto.beginPath(); // empezar un nuevo camino de dibujo
+        contexto.arc(150, 150, 50, 0, Math.PI * 2); // x, y, radio, angulo inicio, angulo fin   --> angulo en radianes
+        contexto.fill(); // rellenar el circulo con el color definido
+    </script>
+</body>
+</html>
