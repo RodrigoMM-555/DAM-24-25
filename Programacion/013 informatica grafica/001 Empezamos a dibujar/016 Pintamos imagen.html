@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+    canvas{border:1px solid grey;}
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <input type="color" id="selectorcolor">
+    <input type="range" id="grosortrazo">
+    <script>
+        let lienzo = document.querySelector("canvas");
+        let contexto = lienzo.getContext("2d");
+        lienzo.width = 512
+        lienzo.height = 512
+        let imagen = new Image()                //Imagen en memoria
+        imagen.src = "500_333.webp"             //Ruta de la imagen
+        imagen.onload = function(){             //Cuando la imagen se haya cargado
+            contexto.drawImage(imagen,50,50)    //Dibujar la imagen en el lienzo
+        }
+    </script>
+</body>
+</html>
