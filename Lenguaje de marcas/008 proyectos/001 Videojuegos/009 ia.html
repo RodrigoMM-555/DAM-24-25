@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Three Lane Runner Ultimate - Limpio</title>
+<style>
+body{
+    margin:0;
+    background:#1a1a2e;
+    font-family: monospace;
+    text-align:center;
+    color:white;
+}
+canvas{
+    display:block;
+    margin:auto;
+    border:2px solid #555;
+    background: linear-gradient(to bottom, #2e2e4f, #1a1a2e);
+}
+button{
+    font-size:20px;
+    margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+<h1>Three Lane Runner Ultimate</h1>
+<canvas width="400" height="600"></canvas>
+<div id="menu">
+    <h2>Three Lane Runner</h2>
+    <p>Muévete entre carriles con A/D o flechas. Evita enemigos y recoge monedas y power-ups.</p>
+    <button onclick="startGame()">Iniciar Juego</button>
+</div>
+<div id="gameover" style="display:none;">
+    <h2>Game Over</h2>
+    <p id="scoreText"></p>
+    <button onclick="startGame()">Reintentar</button>
+</div>
+
+<script>
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+
+const LANES = [80,180,280];
+const jugadorSize = 40;
+let jugadorLane = 1;
+let smoothX = LANES[jugadorLane];
+let jugadorY = 500;
+let vidas = 3;
+let monedas = 0;
+let gameOver = false;
+let enemigos = [];
+let powerUps = [];
+let particulas = [];
+let velocidadEnemigos = 2;
+let laneTimers = [0,0,0];
+let nivel = 1;
+let spawnTimer = 0;
+
+// ================= INPUT =================
+document.addEventListener("keydown", e=>{
+    if(e.key==="a"||e.key==="ArrowLeft") jugadorLane = Math.max(0,jugadorLane-1);
+    if(e.key==="d"||e.key==="ArrowRight") jugadorLane = Math.min(2,jugadorLane+1);
+});
+
+// ================= CLASES =================
+class Enemigo{
+    constructor(){
+        let tries=0;
+        do{
+            this.lane = Math.floor(Math.random()*3);
+            tries++;
+        } while(laneTimers[this.lane]<60 && tries<10);
+        laneTimers[this.lane] = 0;
+        this.y = -40;
+        this.size = 40;
+        this.color = "tomato";
+    }
+    update(){ this.y += velocidadEnemigos; }
+    draw(){
+        ctx.save();
+        ctx.fillStyle=this.color;
+        ctx.shadowColor=this.color;
+        ctx.shadowBlur=12;
+        ctx.fillRect(LANES[this.lane],this.y,this.size,this.size);
+        ctx.restore();
+    }
+}
+
+class Moneda{
+    constructor(){
+        this.lane = Math.floor(Math.random()*3);
+        this.y = -40;
+        this.size = 20;
+        this.bounce = 0;
+    }
+    update(){ 
+        this.y += velocidadEnemigos; 
+        this.bounce += 0.1;
+    }
+    draw(){
+        ctx.save();
+        ctx.fillStyle="gold";
+        ctx.shadowColor="yellow";
+        ctx.shadowBlur=15;
+        ctx.fillRect(LANES[this.lane]+10,this.y+Math.sin(this.bounce)*5,this.size,this.size);
+        ctx.restore();
+    }
+}
+
+class PowerUp{
+    constructor(type){
+        this.type = type;
+        this.lane = Math.floor(Math.random()*3);
+        this.y = -40;
+        this.size = 30;
+        this.bounce = 0;
+    }
+    update(){ 
+        this.y += velocidadEnemigos; 
+        this.bounce += 0.1;
+    }
+    draw(){
+        const colors = {vida:"lime", multiplicador:"deepskyblue", velocidad:"magenta"};
+        ctx.save();
+        ctx.fillStyle=colors[this.type];
+        ctx.shadowColor=colors[this.type];
+        ctx.shadowBlur=20;
+        ctx.fillRect(LANES[this.lane]+5,this.y+Math.sin(this.bounce)*5,this.size,this.size);
+        ctx.restore();
+    }
+}
+
+class Particula{
+    constructor(x,y,color,vx,vy){
+        this.x=x; this.y=y;
+        this.vx=vx||((Math.random()-0.5)*2);
+        this.vy=vy||((Math.random()-0.5)*2);
+        this.life=30;
+        this.color=color;
+    }
+    update(){ this.x+=this.vx; this.y+=this.vy; this.life--; }
+    draw(){
+        ctx.save();
+        ctx.fillStyle=this.color;
+        ctx.fillRect(this.x,this.y,4,4);
+        ctx.restore();
+    }
+}
+
+// ================= UTIL =================
+function checkCollision(obj){
+    return obj.lane === jugadorLane && obj.y + (obj.size||0) > jugadorY && obj.y < jugadorY + jugadorSize;
+}
+
+// ================= SPAWN =================
+function spawnEnemigo(){ enemigos.push(new Enemigo()); }
+function spawnMoneda(){ enemigos.push(new Moneda()); }
+function spawnPowerUp(){ 
+    const types=["vida","multiplicador","velocidad"];
+    powerUps.push(new PowerUp(types[Math.floor(Math.random()*types.length)]));
+}
+
+// ================= LOOP =================
+function loop(){
+    if(gameOver) return;
+
+    // fondo degradado dinámico
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    let gradient = ctx.createLinearGradient(0,0,0,canvas.height);
+    gradient.addColorStop(0,"#2e2e4f");
+    gradient.addColorStop(1,"#1a1a2e");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    // carriles
+    ctx.strokeStyle="#555";
+    for(let x of LANES){
+        ctx.beginPath();
+        ctx.moveTo(x+jugadorSize/2,0);
+        ctx.lineTo(x+jugadorSize/2,canvas.height);
+        ctx.stroke();
+    }
+
+    // interpolación suave
+    smoothX += (LANES[jugadorLane]-smoothX)*0.2;
+
+    // jugador con trail
+    ctx.save();
+    ctx.fillStyle="cyan";
+    ctx.shadowColor="cyan";
+    ctx.shadowBlur=20;
+    ctx.fillRect(smoothX,jugadorY,jugadorSize,jugadorSize);
+    ctx.restore();
+    // partículas trail limitadas
+    if(particulas.length<150) particulas.push(new Particula(smoothX+jugadorSize/2,jugadorY+jugadorSize/2,"cyan", (Math.random()-0.5)*1, Math.random()*-1.5));
+
+    // actualizar enemigos
+    enemigos.forEach((e,i)=>{
+        e.update();
+        e.draw();
+        laneTimers[e.lane]++;
+        if(checkCollision(e)){
+            if(e instanceof Enemigo){
+                vidas--;
+                for(let j=0;j<10;j++) particulas.push(new Particula(smoothX+jugadorSize/2,jugadorY+jugadorSize/2,"red"));
+                enemigos.splice(i,1);
+                if(vidas<=0) endGame();
+            }
+            if(e instanceof Moneda){
+                monedas++;
+                for(let j=0;j<10;j++) particulas.push(new Particula(smoothX+jugadorSize/2,jugadorY+jugadorSize/2,"yellow"));
+                enemigos.splice(i,1);
+            }
+        }
+        if(e.y>canvas.height) enemigos.splice(i,1);
+    });
+
+    // actualizar powerUps
+    powerUps.forEach((p,i)=>{
+        p.update();
+        p.draw();
+        if(checkCollision(p)){
+            if(p.type==="vida" && vidas<3) vidas++;
+            if(p.type==="multiplicador") monedas+=5;
+            if(p.type==="velocidad") velocidadEnemigos+=0.5;
+            for(let j=0;j<10;j++) particulas.push(new Particula(LANES[jugadorLane]+jugadorSize/2,jugadorY+jugadorSize/2,"lime"));
+            powerUps.splice(i,1);
+        }
+        if(p.y>canvas.height) powerUps.splice(i,1);
+    });
+
+    // actualizar partículas
+    particulas.forEach((p,i)=>{
+        p.update();
+        p.draw();
+        if(p.life<=0) particulas.splice(i,1);
+    });
+
+    // HUD
+    ctx.fillStyle="white";
+    ctx.fillText("Vidas: "+vidas,10,20);
+    ctx.fillText("Monedas: "+monedas,10,40);
+    ctx.fillText("Nivel: "+nivel,10,60);
+
+    requestAnimationFrame(loop);
+}
+
+// ================= GAME MANAGEMENT =================
+function gameTick(){
+    if(gameOver) return;
+    spawnTimer++;
+    // spawn de enemigos y powerups con buffer visual
+    if(spawnTimer % Math.max(30-Math.floor(nivel*2),8) ===0){
+        const r = Math.random();
+        if(r<0.6) spawnEnemigo();
+        else if(r<0.85) spawnMoneda();
+        else spawnPowerUp();
+    }
+    if(spawnTimer % 600===0){
+        nivel+=1;
+        velocidadEnemigos+=0.3;
+    }
+    requestAnimationFrame(gameTick);
+}
+
+function endGame(){
+    gameOver = true;
+    document.getElementById("gameover").style.display="block";
+    document.getElementById("scoreText").innerText = "Monedas recogidas: "+monedas+" | Nivel alcanzado: "+nivel;
+}
+
+function startGame(){
+    vidas=3;
+    monedas=0;
+    gameOver=false;
+    jugadorLane=1;
+    smoothX = LANES[jugadorLane];
+    enemigos=[];
+    powerUps=[];
+    particulas=[];
+    velocidadEnemigos=2;
+    laneTimers=[0,0,0];
+    nivel=1;
+    spawnTimer=0;
+    document.getElementById("menu").style.display="none";
+    document.getElementById("gameover").style.display="none";
+    loop();
+    gameTick();
+}
+</script>
+</body>
+</html>
