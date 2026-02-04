@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lienzo</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        let lienzo = document.querySelector("canvas");
+        let contexto = lienzo.getContext("2d");
+        lienzo.width = 512;
+        lienzo.height = 512;
+        // Rectangulo
+        contexto.fillRect(40,40,60,60); // x, y de la esquina izquierda, ancho, alto    --> recuerda que la y va hacia abajo
+        // Circulo
+        contexto.beginPath(); // empezar un nuevo camino de dibujo
+        contexto.arc(150, 150, 50, 0, Math.PI * 2); // x, y, radio, angulo inicio, angulo fin   --> angulo en radianes
+    </script>
+</body>
+</html>

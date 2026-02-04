@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lienzo</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        let lienzo = document.querySelector("canvas");
+        let contexto = lienzo.getContext("2d");
+        lienzo.width = 800;
+        lienzo.height = 800;
+
+        contexto.beginPath();
+        contexto.moveTo(100,100); // mover el pincel sin pintar
+        contexto.lineTo(200,150); // mover el pincel pintando
+        contexto.lineTo(150,250); 
+        contexto.lineTo(50,200);
+        contexto.stroke();
+
+    </script>
+</body>
+</html>

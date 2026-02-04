@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mini Photoshop – Brochas</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#1e1e1e;
+    color:#eee;
+    display:flex;
+    height:100vh;
+}
+
+#sidebar{
+    width:230px;
+    background:#252526;
+    padding:12px;
+    border-right:1px solid #333;
+}
+
+button, input, select{
+    width:100%;
+    margin-bottom:8px;
+    background:#333;
+    color:white;
+    border:none;
+    padding:6px;
+    border-radius:6px;
+}
+
+#workspace{
+    flex:1;
+    background:#3c3c3c;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#documento{
+    position:relative;
+    width:900px;
+    height:550px;
+    background:white;
+    box-shadow:0 0 15px black;
+}
+
+canvas{
+    position:absolute;
+    top:0;
+    left:0;
+}
+</style>
+</head>
+
+<body>
+
+<div id="sidebar">
+    <button onclick="herramienta='pincel'">🖌 Pincel</button>
+    <button onclick="herramienta='goma'">🧽 Goma</button>
+
+    <hr>
+
+    <label>Tipo de brocha</label>
+    <select id="tipoBrocha">
+        <option value="redonda">Redonda</option>
+        <option value="cuadrada">Cuadrada</option>
+        <option value="spray">Spray</option>
+        <option value="caligrafia">Caligráfica</option>
+    </select>
+
+    <label>Color</label>
+    <input type="color" id="color">
+
+    <label>Grosor</label>
+    <input type="range" id="grosor" min="1" max="40" value="10">
+
+    <label>Opacidad</label>
+    <input type="range" id="opacidad" min="0.1" max="1" step="0.1" value="1">
+
+    <hr>
+
+    <input type="file" id="imagen">
+    <button onclick="crearCapa()">➕ Nueva capa</button>
+    <button onclick="guardar()">💾 Guardar</button>
+</div>
+
+<div id="workspace">
+    <div id="documento">
+        <canvas id="base"></canvas>
+    </div>
+</div>
+
+<script>
+const doc = document.getElementById("documento");
+const canvasBase = document.getElementById("base");
+const ctxBase = canvasBase.getContext("2d");
+
+canvasBase.width = 900;
+canvasBase.height = 550;
+ctxBase.fillStyle = "white";
+ctxBase.fillRect(0,0,900,550);
+
+let capas = [];
+let capaActiva = null;
+let herramienta = "pincel";
+let dibujando = false;
+
+const color = document.getElementById("color");
+const grosor = document.getElementById("grosor");
+const opacidad = document.getElementById("opacidad");
+const tipoBrocha = document.getElementById("tipoBrocha");
+
+/* ===== CREAR CAPA ===== */
+function crearCapa(){
+    const canvas = document.createElement("canvas");
+    canvas.width = 900;
+    canvas.height = 550;
+    doc.appendChild(canvas);
+    const ctx = canvas.getContext("2d");
+
+    canvas.onmousedown = ()=> dibujando = true;
+    canvas.onmouseup = ()=> dibujando = false;
+    canvas.onmousemove = e =>{
+        if(!dibujando) return;
+        ctx.globalAlpha = opacidad.value;
+
+        if(herramienta === "pincel"){
+            dibujarBrocha(ctx, e.offsetX, e.offsetY);
+        }
+
+        if(herramienta === "goma"){
+            ctx.clearRect(
+                e.offsetX - grosor.value/2,
+                e.offsetY - grosor.value/2,
+                grosor.value,
+                grosor.value
+            );
+        }
+    };
+
+    capas.push({canvas, ctx});
+    capaActiva = ctx;
+}
+
+/* ===== BROCHAS ===== */
+function dibujarBrocha(ctx, x, y){
+    ctx.fillStyle = color.value;
+
+    switch(tipoBrocha.value){
+
+        case "redonda":
+            ctx.beginPath();
+            ctx.arc(x, y, grosor.value, 0, Math.PI*2);
+            ctx.fill();
+        break;
+
+        case "cuadrada":
+            ctx.fillRect(x, y, grosor.value, grosor.value);
+        break;
+
+        case "spray":
+            for(let i=0;i<20;i++){
+                const offsetX = (Math.random()-0.5)*grosor.value*2;
+                const offsetY = (Math.random()-0.5)*grosor.value*2;
+                ctx.fillRect(x+offsetX, y+offsetY, 1, 1);
+            }
+        break;
+
+        case "caligrafia":
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate(Math.PI / 6);
+            ctx.fillRect(0, 0, grosor.value*1.5, grosor.value/2);
+            ctx.restore();
+        break;
+    }
+}
+
+/* ===== IMAGEN ===== */
+document.getElementById("imagen").onchange = e =>{
+    const img = new Image();
+    img.src = URL.createObjectURL(e.target.files[0]);
+    img.onload = ()=> ctxBase.drawImage(img,0,0,900,550);
+};
+
+/* ===== GUARDAR ===== */
+function guardar(){
+    const final = document.createElement("canvas");
+    final.width = 900;
+    final.height = 550;
+    const ctx = final.getContext("2d");
+
+    ctx.drawImage(canvasBase,0,0);
+    capas.forEach(c=>ctx.drawImage(c.canvas,0,0));
+
+    const a = document.createElement("a");
+    a.download = "imagen_final.png";
+    a.href = final.toDataURL();
+    a.click();
+}
+
+/* ===== INICIO ===== */
+crearCapa();
+</script>
+
+</body>
+</html>
