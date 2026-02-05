@@ -1,0 +1,41 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <canvas></canvas>
+        <script>
+            // Declaracion de clases
+            class jugador{
+                constructor(){
+                    this.x = 100;
+                    this.y = 100;
+                }
+            }
+
+            //Condiciones globales de inico
+            var lienzo = document.querySelector("canvas")
+            var contexto = lienzo.getContext("2d")
+            lienzo.width = 512
+            lienzo.height = 512
+            var temporizador;
+            var jugador = new Jugador();
+            inicio()
+
+            // Funcion de inicio
+            function incio(){
+                console.log = ("Yo soy el incio")
+                temporizador = setTimeout("bucle()",1000);
+            }
+            
+            // Funcion de bucle
+            function bucle(){
+                clearTimeout(temporizador)
+                temporizador = setTimeout("bucle()",1000)
+            }
+
+            // Manejadores de eventos
+
+        </script>
+    </body>
+</html>
