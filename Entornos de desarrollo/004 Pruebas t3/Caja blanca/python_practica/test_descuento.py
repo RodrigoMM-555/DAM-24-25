@@ -1,4 +1,4 @@
-from descuento import calcular_descuento
+from descuento import calcular_descuento, descuento_especial
 def test_precio_negativo():
     assert calcular_descuento(-10, True) == 0
 def test_cliente_vip():
@@ -10,5 +10,5 @@ def test_descuento_muy_alto():
     # Cambiamos el valor de la prueba para que concuerde con el código
     assert calcular_descuento(600, True) == 480
 
-def test_descuento_especial()
+def test_descuento_especial():
     assert descuento_especial(10) == 3
