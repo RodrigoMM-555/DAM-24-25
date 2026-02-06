@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    	<meta charset="utf-8">
+  </head>
+  <body>
+    <section class="jocarsacarrusel">
+        <div><h1>Hola</h1></div>
+        <div><h1>Adios</h1></div>
+        <div><h1>Puede ser</h1></div>
+    </section>
+    <style>
+        .jocarsacarrusel{
+            width:1280px;
+            height:720px;
+            overflow:hidden;
+            position:relative;
+            border-radius:10px;
+            box-shadow:0px 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .jocarsacarrusel section{
+            width:8960px;
+            display:flex;
+            left:0px;
+            transition:all 1s;
+            position:relative;
+        }
+
+        button{
+            border:none;
+            background:rgba(255,255,255,0.5);
+            width:60px;
+            height:60px;
+            position:absolute;
+            top:50%;
+            border-radius:60px;
+            font-size:30px;
+            line-height:60px;
+            text-align:center;
+        }
+
+        button:hover{
+            background:rgba(255,255,255,1);
+            transition:all 1s;
+        }
+
+        .jocarsacarrusel button:first-of-type {
+            left:2%;
+        }
+        
+        .jocarsacarrusel button:last-of-type {
+            right:2%;
+        }
+    </style>
+    <script>
+        // Cojo el contenedor externo (es un solo elemento)
+        let contenedor = document.querySelector(".jocarsacarrusel");
+
+        // Cojo los elementos (los "slides") dentro de la sección original
+        let contenido = document.querySelectorAll("section.jocarsacarrusel div");
+
+        // Para cada uno de los elementos, lo quitamos del DOM temporalmente
+        contenido.forEach(function(elemento){
+            elemento.remove();
+        });
+
+        // Creo un nuevo contenedor que es una <section> (será la tira deslizante)
+        let nuevo_contenedor = document.createElement("section");
+        nuevo_contenedor.style.left = "0px";       // posición inicial
+        nuevo_contenedor.style.display = "flex";   // ponemos en fila para deslizar
+
+        // Añadimos el nuevo contenedor dentro del carrusel
+        contenedor.appendChild(nuevo_contenedor);
+
+        // Volvemos a meter los elementos dentro del nuevo contenedor
+        // (cada slide ocupa el ancho del carrusel y no se encoge)
+        var anchura = 1280; // ancho visible del carrusel (coincide con tu CSS)
+        contenido.forEach(function(elemento){
+            elemento.style.width = anchura + "px";   // cada slide igual al viewport
+            elemento.style.flex = "0 0 " + anchura + "px"; // no encoger, ancho fijo
+            nuevo_contenedor.appendChild(elemento);
+        });
+
+        // Ajustamos el ancho total de la tira según el número de slides
+        nuevo_contenedor.style.width = (contenido.length * anchura) + "px";
+
+
+        // Ahora creo dos botones
+        let botonatras = document.createElement("button");
+        botonatras.textContent = "◀";
+        contenedor.appendChild(botonatras);
+
+        let botondelante = document.createElement("button");
+        botondelante.textContent = "▶";
+        contenedor.appendChild(botondelante);
+
+        // Índice del slide actual (0 = primero)
+        var indiceActual = 0;
+        var total = contenido.length;
+
+        // Función para actualizar la posición de la tira (desplazamiento con transición)
+        function actualizarPosicion(){
+            // Desplazamos la tira hacia la izquierda tantas anchuras como indique el índice
+            nuevo_contenedor.style.left = (-indiceActual * anchura) + "px";
+        }
+
+        // Click en botón "delante" -> siguiente slide (cíclico)
+        botondelante.onclick = function(){
+            // Avanzamos y aplicamos módulo para ciclar
+            indiceActual = (indiceActual + 1) % total;
+            actualizarPosicion();
+        };
+
+        // Click en botón "atrás" -> slide anterior (cíclico)
+        botonatras.onclick = function(){
+            // Retrocedemos y sumamos total antes del módulo para evitar negativos
+            indiceActual = (indiceActual - 1 + total) % total;
+            actualizarPosicion();
+        };
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
