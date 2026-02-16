@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Temporizador Pro</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle at top,#1f1f2e,#0f0f17);
+    font-family:'Segoe UI', sans-serif;
+    color:white;
+}
+
+.card{
+    background:#1c1c28;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.6);
+    text-align:center;
+    width:350px;
+    position:relative;
+}
+
+h1{
+    margin-top:0;
+    font-weight:300;
+    letter-spacing:2px;
+}
+
+.timer{
+    font-size:60px;
+    margin:20px 0;
+    font-weight:bold;
+}
+
+circle{
+    fill:none;
+    stroke-width:10;
+    stroke-linecap:round;
+}
+
+.bg{
+    stroke:#333;
+}
+
+.progress{
+    stroke:#00f5d4;
+    stroke-dasharray:440;
+    stroke-dashoffset:0;
+    transition:stroke-dashoffset 1s linear;
+}
+
+.buttons{
+    margin-top:20px;
+}
+
+button{
+    background:#00f5d4;
+    border:none;
+    padding:12px 18px;
+    margin:5px;
+    border-radius:50%;
+    font-size:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.15);
+}
+
+.danger{
+    color:#ff4d6d;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    0%{opacity:1}
+    50%{opacity:0.3}
+    100%{opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>⏳ TIMER</h1>
+
+    <svg width="160" height="160">
+        <circle class="bg" cx="80" cy="80" r="70"></circle>
+        <circle class="progress" cx="80" cy="80" r="70"></circle>
+    </svg>
+
+    <div class="timer" id="tiempo">01:00</div>
+
+    <div class="buttons">
+        <button id="start">▶️</button>
+        <button id="pause">⏸️</button>
+        <button id="reset">🔄</button>
+    </div>
+</div>
+
+<script>
+let tiempo = 60
+let temporizador = null
+const tiempoTexto = document.getElementById("tiempo")
+const circulo = document.querySelector(".progress")
+
+const total = 440
+
+function actualizarVista(){
+    let segundos = tiempo.toString().padStart(2,"0")
+    tiempoTexto.textContent = "00:" + segundos
+    circulo.style.strokeDashoffset = total - (tiempo/60)*total
+}
+
+function iniciar(){
+    if(temporizador) return
+    temporizador = setInterval(()=>{
+        if(tiempo > 0){
+            tiempo--
+            actualizarVista()
+        } else {
+            clearInterval(temporizador)
+            temporizador = null
+            tiempoTexto.classList.add("danger")
+            let alarma = new Audio("pitipiti.mp3")
+            alarma.play()
+        }
+    },1000)
+}
+
+function pausar(){
+    clearInterval(temporizador)
+    temporizador = null
+}
+
+function reiniciar(){
+    clearInterval(temporizador)
+    temporizador = null
+    tiempo = 60
+    tiempoTexto.classList.remove("danger")
+    actualizarVista()
+}
+
+document.getElementById("start").onclick = iniciar
+document.getElementById("pause").onclick = pausar
+document.getElementById("reset").onclick = reiniciar
+
+actualizarVista()
+</script>
+
+</body>
+</html>
