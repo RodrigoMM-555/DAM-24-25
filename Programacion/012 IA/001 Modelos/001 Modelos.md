@@ -8,4 +8,3 @@ ollama pull [nombre de ia]
 ollama list
 
 #Ejecutar un modelo en linea de comandos
-ollama run qwen2.5:3b-instruct
