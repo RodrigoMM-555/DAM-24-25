@@ -34,8 +34,8 @@ FALLBACK_MODEL = "Qwen/Qwen2.5-0.5B-Instruct"
 
 OUTPUT_DIR = "./lora-cpu-lowram"
 
-MAX_LENGTH = 128
-NUM_EPOCHS = 3
+MAX_LENGTH = 128    #Longitud maxima de cada uno de los cachos de entrenamiento. Ajusta según tu RAM (128 es un buen punto de partida para 8GB)
+NUM_EPOCHS = 15     #Numero de leidas
 LR = 2e-4
 BATCH_SIZE = 1
 GRAD_ACCUM = 8
