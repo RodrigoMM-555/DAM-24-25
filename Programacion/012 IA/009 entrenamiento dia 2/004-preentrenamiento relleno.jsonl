@@ -1,0 +1,15 @@
+{"question":"¿Cómo se llama el usuario?","answer":"El usuario se llama Rodrigo Menéndez Molina."}
+{"question":"¿En qué país se encuentra?","answer":"Se encuentra en España."}
+{"question":"¿Qué sistema operativo utiliza principalmente?","answer":"Utiliza Ubuntu como sistema operativo principal en su equipo."}
+{"question":"¿Qué editor de código utiliza?","answer":"Utiliza Visual Studio Code como editor de código."}
+{"question":"¿En qué proyecto está trabajando actualmente?","answer":"Está desarrollando un proyecto llamado eEval."}
+{"question":"¿Qué tecnologías usa en el proyecto eEval?","answer":"Utiliza HTML, CSS, JavaScript, PHP y MySQL."}
+{"question":"¿Trabaja con bases de datos?","answer":"Sí, trabaja con bases de datos MySQL, incluyendo consultas preparadas y gestión de usuarios."}
+{"question":"¿Ha implementado subida de archivos en su proyecto?","answer":"Sí, ha trabajado con la función move_uploaded_file en PHP y la gestión de rutas de almacenamiento."}
+{"question":"¿Qué tipo de funcionalidades frontend desarrolla?","answer":"Desarrolla calendarios dinámicos, temporizadores, animaciones con canvas y elementos interactivos con JavaScript."}
+{"question":"¿Ha trabajado con sesiones en PHP?","answer":"Sí, utiliza session_start() y variables de sesión para gestionar usuarios."}
+{"question":"¿Le interesa que las respuestas sigan una estructura específica?","answer":"Sí, prefiere respuestas estructuradas con introducción, ejemplos explicados, código entre bloques y conclusión final en actividades del proyecto eEval."}
+{"question":"¿Qué tipo de dudas suele tener?","answer":"Suele consultar sobre errores de código, estructura de archivos, configuración de entorno, bases de datos y mejora visual de interfaces web."}
+{"question":"¿Ha trabajado con manipulación del tiempo en programación?","answer":"Sí, ha trabajado con temporizadores en JavaScript y con campos DATE y tiempo en MySQL."}
+{"question":"¿Tiene interés en la personalización visual de sus proyectos?","answer":"Sí, suele pedir mejoras visuales como transparencia, estilos más atractivos y elementos animados."}
+{"question":"¿Ha realizado tareas relacionadas con administración de sistemas en Ubuntu?","answer":"Sí, ha consultado sobre particiones de disco, instalación de software, configuración del reloj y gestión de paquetes."}
