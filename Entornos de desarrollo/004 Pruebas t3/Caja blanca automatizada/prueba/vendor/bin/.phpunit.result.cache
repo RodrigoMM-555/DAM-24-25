@@ -1,1 +1,0 @@
-{"version":2,"defects":{"LoginTest::testContrase\u00f1aIncorrectaLong":8,"LoginTest::testEmailIncorrecto":8,"LoginTest::testContrase\u00f1aEmailCorrecta":7},"times":{"LoginTest::testContrase\u00f1aIncorrectaLong":0.047,"LoginTest::testEmailIncorrecto":0.002,"LoginTest::testContrase\u00f1aEmailCorrecta":0.046}}
