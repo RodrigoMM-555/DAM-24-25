@@ -1,0 +1,29 @@
+Las estructuras de selección como if, elif y else son elementales en programas tanto
+sencillos o complejos en los que el programa tenga que dar distintas respuestas según el
+caso.
+El ejemplo que nos da la actividad seria el siguiente:
+```
+'''
+Rodrigo Menéndez Molina
+003/001 Estructuras de selección
+Categoria según edad
+'''
+edad=15
+# Comienza tu codigo aquí
+categoria=""
+#De pendiendo el rango de edad la categoria sera una u otra
+if edad<10:
+categoria="Niño"
+elif 10>=edad<20:
+categoria="Adolescente"
+else:
+categoria="Adulto"
+#Mostraremos la categoria a la que pertenece el ususario
+print("Estas en la categoria",categoria)
+```
+Algunos errores comunes en relación con el if pueden ser olvidarse de los dos puntos al
+final o no usar el sangrado correcto. Además de que a la hora de hacer comparaciones de
+igualdad hay que usar el signo = dos veces ==
+En conclusión, los elementos de selección son herramientas muy útiles para aislar casos y
+responder conforme a estas. En un futuro veremos otros sistemas parecidos como el try o
+except que son similares pero más especializados a otra área.

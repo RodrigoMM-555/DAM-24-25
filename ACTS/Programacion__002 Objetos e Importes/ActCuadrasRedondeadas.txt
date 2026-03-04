@@ -1,0 +1,36 @@
+
+Saber usar la libreria matemática es muy útil par amenizar el trabajo con operaciones
+complejas como redondeos, potencias o raíces.
+
+Especialmente útil es la instanciacion de objetos y el uso de métodos, por ejemplo:
+```
+import math as matematicas
+raiz_cuadrada = matematicas.sqrt
+```
+Con este ejemplo ilustramos el cambio de nombre de la libreria math y la instanciacion de
+objetos que recogen funciones de la libreria math.
+
+Un ejemplo práctico de esto sería la actividad propuesta:
+```
+'''
+Rodrigo Menendez Molina
+002/007 Destrucción de objetos y liberación de memoria
+Calculadora de cuadras
+'''
+
+#0
+import math
+
+#1
+num_caballos = int(input("Numero de caballos: "))
+
+#2
+cuadras = num_caballos/3
+cuadras_redondeadas = math.ceil(cuadras)
+
+#3
+print("Necesitas",cuadras_redondeadas,"cuadras")
+```
+
+En conclusión, el uso de métodos y librerías es muy útil para poder llevar a cabo programas que con el código base de Python se podrían llegar a complicar. Además, se puede aplicar para dar orden a los programas. En un futuro a esto se le podrán sumar estructuras de control que permitan aumentar las capacidades del programa.
+

@@ -1,0 +1,33 @@
+
+Los literales son un tipo de dato representado directamente en el código fuente. De estos podemos encontrar numéricos como 1, 45 o 1265; de texto como "Hola" o los booleanos "True" y "False". Aunque también existen otros como los diccionarios, listas y tuplas.
+Esos valores son muy importantes, pues son estáticos, por lo que proporcionan claridad al programa.
+
+Aquí algunos ejemplos
+```
+num=3
+text="Hola mundo"
+bool=True
+```
+
+Un ejemplo de su uso práctico y como dicta la actividad seria el siguiente:
+```
+'''
+Rodrigo Menendez Molina
+001/004 Literales
+'''
+
+#1
+nombre="Rodrigo Menendez Molina"
+
+#2
+edad="18 años"
+
+#3
+horas_jugadas=70
+
+#4
+print("Soy",nombre,"tengo",edad,"de edad y este mes he jugado",horas_jugadas,"horas")
+```
+
+En conclusión, hay valores literales de distintos tipos y dentro de estos tipos más tipos aún, como el int o float. Estos valores son muy esenciales para definir variables o constantes, así como dar claridad al programa. Obviamente, esto es usado constantemente en videojuegos al calcular el daño de ataques, la velocidad o los textos que se muestran.
+

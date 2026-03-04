@@ -1,0 +1,33 @@
+Es muy importante saber como importar librerías y utilizar las funcione y valores que estas
+nos dan de forma predefinida. Especialmente en Python es un elemento a destacar. La
+librería math concretamente es muy útil para realizar operaciones con valores sin tener que
+declararlos nosotros.
+Para importar librerías se usa el comando import seguido del nombre de la libreria.
+```
+import math
+```
+Algunos de los elementos que podemos encontrar dentro de la librería math podrían ser él
+.sqrt() para calcular la raíz cuadrada, o el .pi para obtener el valor del número pi.
+```
+n = math.sqrt(98)
+pi = math.pi
+```
+Como se puede ver, las funciones de una libreria siempre van acompañadas del nombre de
+la librería delante y separadas por un punto.
+El ejercicio propuesto quedaría de la siguiente manera:
+```
+‘’’
+Rodrigo menendez Molina
+002/001 Caracteristicas de los objetos
+Raiz cuadrada y redondeo
+‘’’
+import math
+numero = 16
+print(numero)
+raiz = math.sqrt(numero)
+print(raiz)
+raiz = round(raiz)
+print(raiz)
+```
+En conclusión, el uso de librerías para cálculos matemáticos es una herramienta que ahorra
+tiempo y demuestra un control superior sobre las capacidades Python.

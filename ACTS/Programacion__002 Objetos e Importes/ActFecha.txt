@@ -1,0 +1,29 @@
+La utilización de la libreria date y sus métodos es muy útil para mantener la fecha actualizada en un programa o web que actúe como servicio.
+
+Un ejemplo de su uso práctico y la respuesta al ejercicio propuesto seria el siguiente programa:
+
+```
+'''
+Rodrigo Menendez Molina
+002/006 Utilización de métodos estáticos
+Dia mes y año
+'''
+
+#1
+from datetime import date
+
+#2
+fecha_actual = date.today()
+print(fecha_actual)
+
+#3
+dia = (fecha_actual.weekday())
+mes = (fecha_actual.month)
+
+dias = ["lunes","martes","miercoles","jueves","sabado","domingo"] 
+meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]
+
+print("Hoy es",dias[dia],fecha_actual.day,"del mes de",meses[mes],"del año",fecha_actual.year)
+```
+
+En conclusión, el uso de librerías es muy útil para evitar tener que actualizar manualmente datos como la fecha y las propiedades y constructores de objetos hacen esto más ameno.

@@ -1,0 +1,36 @@
+Los operadores son elementos básicos usados para calcular con los valores de las variables o numeros difinidos en el programa. Entre estos tenemos +, *, -, /, %.
+
+Algunos ejemplos de como usar los operadores serían los siguientes:
+```
+suma= 3+2
+resta= 6-9
+division= 1/3
+multiplicacion= 2*5
+```
+En caso de ser variables y no números, tendríamos que asegurarnos de usar el tipo de valor correcto, un int o float.
+
+El programa de la actividad quedaría así:
+````
+'''
+Rodrigo Menéndez Molina
+001/006 Operadores y extensiones
+Calculadora de impuestos
+'''
+
+#1 Declaramos las variables
+base_imponible=0
+tatal_iva=0
+total_factura=0
+
+#2 Pedimos la base imponible
+base_imponible=float(input("Dame la base imponible: "))
+
+#3 Claculamos el IVA y el total de la factura
+total_iva=base_imponible*(0.21)
+total_factura=base_imponible+total_iva
+
+#4 Mostramos los resultados por pantalla
+print("El total del IVA es",total_iva,"y el total de la factura es",total_factura)
+````
+
+En conclusión, los operadores son elementales para hacer cálculos y cuentas de cualquier tipo. Estos cálculos son imprescindibles para prácticamente todas las partes del código, por ejemplo en videojuegos, la velocidad de movimiento, el daño de las armas o la vida de los enemigos.

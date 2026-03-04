@@ -1,0 +1,85 @@
+La estructura de una clase se basa en las propiedades y metodos que esta contiene. Mediante estas definimos las características y funciones que pueden desempeñar los objetos que forman parte de la clase.
+
+Para crear una clase y definir sus propiedades usamos el siguiente código:
+````
+class = Objetos():
+	def __init__(self):
+		slef.peso = 0
+````
+A la hora de crear clases hay que tener en cuenta una serie de cosas. Primero, se considera buena práctica empezar el nombre de la clase con mayúscula. Y segundo, especificar que tipo de valor debe tener la propiedad, si es entero, cadena de texto, booleano. Además, es importante usar un constructor.
+
+El ejercicio propuesto quedaría de la siguiente manera:
+````
+'''
+Rodrigo Menéndez Molina
+004/002-Estructura y miembros de una clase. Visibilidad
+Gestor de clientes
+'''
+
+#Definimos la clase
+class Cliente():
+    def __init__(self,nombre,apellidos,email):
+        self.email = email
+        self.nombre = nombre
+        self.apellidos = apellidos
+
+#Mensaje de inicio
+print("------------------------------------")
+print("##### Gestión de clientes v0.1 #####")
+print("##### Rodrigo Menéndez Molina  #####")
+
+#Declaramos la lista de clientes
+clientes = []
+
+#Menu
+while True:
+    print("------------------------------------")
+    print("1. Insertar un cliente")
+    print("2. Listar clientes")
+    print("3. Actualizar un cliente")
+    print("4. Eliminar un cliente")
+    opcion = int(input("Escoge una opción: "))
+    print("------------------------------------")
+
+    #Opcion 1 añadir un cliente
+    if opcion == 1:
+        nombre = input("Introduce el nombre: ")
+        apellidos = input("Introduce los apellidos: ")
+        email = input("Introduce el email: ")
+
+        clientes.append(Cliente(nombre,apellidos,email))
+    
+    #Opcion 2 Mostrar lista de clientes
+    elif opcion == 2:
+        identificador = 1
+        for cliente in clientes:
+
+            print(identificador,".", cliente.nombre,cliente.apellidos,cliente.email)
+            identificador += 1
+    #Opcion 3 modificar un cliente
+    elif opcion == 3:
+        identificador = int(input("Introduce el identificador a modificar: "))
+        nombre = input("Introduce el nombre: ")
+        apellidos = input("Introduce los apellidos: ")
+        email = input("Introduce el email: ")
+
+        clientes[identificador-1].nombre = nombre
+        clientes[identificador-1].apellidos = apellidos
+        clientes[identificador-1].email = email
+
+    #Opcion 4 eliminar un cliente
+    elif opcion == 4:
+        identificador = int(input("Introduce el identificador a borrar: "))
+        seguro = input("Estás seguro (s/n): ").lower()
+        if seguro == "n":
+            print("Operacion cancelada")
+        elif seguro == "s":
+            clientes.pop(identificador-1)
+        else:
+            print("Selección invalida, operación cancelada")
+
+    else:
+        break
+````
+
+En conclusión, saber como asignar y reasignar valores a las propiedades de los objetos es una habilidad necesaria y útil para desarrollar los programas que usan clases. 

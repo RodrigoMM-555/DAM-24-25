@@ -1,0 +1,35 @@
+A la hora de programar se pueden dar varias respuestas de una sola pregunta. Para esto
+existen las estructuras de control. Concretamente, en caso de que un valor sea erróneo o
+una parte del código no funcione correctamente, existen estructuras de excepción, try y
+exccept.
+La estructura try except funciona como un if, pero en vez de ver varias opciones, prueba si
+se puede ejecutar y si no ocurre el except.
+Por ejemplo:
+```
+try:
+division = 4/0
+except:
+print(“No se pudo dividir”)
+```
+El ejemplo concreto que nos dicta la actividad seria el siguiente:
+```
+'''
+Rodrigo Menéndez Molina
+003/004 ontrol de excepciones
+TryDivision
+'''
+#Definir la variable
+def dividir(a, b):
+try:
+resultado = a / b
+return resultado
+except ZeroDivisionError:
+print("No puedo dividir entre cero")
+return None
+#Probar la función
+print(dividir(10, 2)) # Debería imprimir 5.0
+print(dividir(10, 0)) # Debería imprimir "No puedo dividir entre cero" y None
+```
+En conclusión, el uso de esta estructura de excepción me parece que se aplica
+principalmente cuando algo no ha salido bien, por ejemplo en un juego si intentas
+conectarte a una partida y no te deja te sale un mensajito.

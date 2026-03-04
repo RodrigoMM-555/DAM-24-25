@@ -1,0 +1,60 @@
+
+En esta actividad se practica la asignación de valores a variables de forma correcta y como mostrarlaspor pantalla junto a más texto. Como aficionado a los videojuegos se que esto e suna parte muy importantepara definir el estado de varias cosas.
+
+Las variables son asignaciones de valores de distintos tipos a identificadores. 
+Para declarar variables necesitamos un identificador, un operador de asignación y un valor.
+```
+repeticiones = 3
+```
+Luego para mostrar las variables por pantalla se usa print.
+Lo que se encuentra entre comillas se imprimirá de forma normal y lo que está entre comas es la variable.
+```
+print("Hoy hize",repeticiones,"repeticiones de sentadilla")
+```
+
+A la hora de poner nombre a las variables hay que asegurarse de evitar algunos errores.
+```
+1edad_jugador = 25                    #No puede comenzar con un número
+nivel-dificultad = "medio"           #El guion (-) no está permitido
+puntos acumulados = 1000         #Los espacios no están permitidos
+def = 5                                         #"def" es una palabra reservada de Python
+```
+
+El código descrito por la actividad quedaría así:
+```
+'''
+Rodrigo Menéndez Molina
+001/002 Variables
+'''
+
+#1.
+#Le damos un nombre y valor a la variable
+nombre_jugador="Juan"
+#Lo mostramos
+print("El nombre del jugador es",nombre_jugador)
+
+#2.
+#Cambiamos el valor de la variable y repetimos el código de arriba
+nombre_jugador="Pedro"
+print("El nombre del jugador es",nombre_jugador)
+
+#3.
+#Estas variables si están permitidas
+edad_jugador=11
+nivel_dificultad=2
+puntos_acumulados=32
+
+#Estas no estan nombradas correctamente
+# 1edad_jugador = 25            No puede comenzar con un número
+# nivel-dificultad = "medio"    El guion (-) no está permitido
+# puntos acumulados = 1000      Los espacios no están permitidos
+# def = 5                       "def" es una palabra reservada de Python
+
+#4.
+edad_jugador = 15
+# edad_jugador es el identificador
+# = es el operador de asignación
+# 15 es el valor literal que se está asignando al identificador
+```
+
+En conclusión, saber como declarar variables correctamente y asignarles valores, asi como mostrarlas por pantalla, son fundamentos básicos necesarios e imprescindibles para cualquier desarrollo, ya sea de videojuegos, aplicación web o cualquier otro código informático.

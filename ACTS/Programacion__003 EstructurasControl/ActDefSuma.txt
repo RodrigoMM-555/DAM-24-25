@@ -1,0 +1,43 @@
+El uso de las funciones en los programas es fundamental para ordenar y utilizar partes de
+código que se vayan a reutilizar muchas veces. Además, se pueden crear librerías con
+funciones que se usen en varios programas distintos.
+Para definir una función se necesita usar def, es recomendable poner un nombre
+compuesto por un verbo y un sustantivo
+```
+def romperJarron():
+```
+Entre los paréntesis irían las variables que se usen dentro de la función. Es muy importante
+colocar los paréntesis, incluso si no hay variables en la función, además de no olvidarnos de
+los dos puntos.
+```
+def romperJarron(jarron1,jarron2):
+```
+Para importar funciones desde librerías debemos usar el comando import añadiendo el
+comando from. De esta manera traemos la función desde el archivo donde está
+almacenada.
+```
+from jarrones import romperJarrones
+romperJarrones(1,2)
+```
+El programa propuesto por el ejercicio quedaría así:
+funcionsuma
+```
+'''
+Rodrigo Menendez Molina
+003/003 Estructuras de salto
+Suma con funcion
+'''
+#1 Funcion que calcula la suma de dos numeros
+def calculaSuma(numero1, numero2):
+suma = numero1 + numero2
+return suma
+```
+llamdaCalculo
+```
+#2 Llamada de la funcion desde otro programa
+from funcionsuma import calculaSuma
+print(calculaSuma(5,3))
+```
+En colusión, el uso de funciones y librerías de las mismas es una herramienta muy útil para
+evitar repetir líneas de código o tener todo desordenado. Además, brinda la posibilidad de
+compartir código entre distintos programas.

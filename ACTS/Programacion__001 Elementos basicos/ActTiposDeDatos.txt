@@ -1,0 +1,44 @@
+1.
+Los tipos de datos son fundamentales a la hora de definir las variables. Escoger un tipo de valor incorrecto puede llevar a errores e inconsistencias en el código.
+En esta actividad nos aseguraremos de que los datos sean del tipo correcto.
+
+2.
+De los tipos de datos en Python, en este ejercicio usamos los enteros (int) aunque también conocemos los flotantes (float)
+```
+peras=int(input("Cuantas peras tienes:"))
+```
+De esta manera nos aseguramos de que la edad introducida sea un número entero. En caso de ser un umero decimal, int lo redondearía y en caso de ser una cadena de texto el programa daría error.
+```
+altura=float(input("Dame tu altura:"))
+```
+En este caso, float mantendrá los decimales en caso de haberlos. De igual manera, dará error si el dato es una cadena de texto.
+Una vez el dato es del tipo que queremos, podemos operar con ellos. En este caso con int podemos efectuar operaciones matemáticas.
+```
+fruta=peras+manzanas
+```
+Con que solo un valor sea float el resultado, aunque sea entero, se considerara float
+
+3.
+El ejercicio pedido sería el siguiente y obviamente se podría aplicar a cualquier pequeño videojuego a la hora de registrarse.
+
+```
+'''
+Rodrigo Menéndez Molina
+001/003 Tipos de datos
+'''
+
+#1 Nombre del personaje
+nombre_personaje="Quasimodo"
+
+#2 Nombre del ususario y presentacion del personaje
+nombre_ususario=input("Dame tu nombre de ususario: ")
+print("Hola estiamdo",nombre_ususario,"soy",nombre_personaje)
+
+#3 Edad del ususario y su doble
+edad=int(input("\nDame tu edad: "))
+doble_edad=edad*2
+print("El doble de tu edad es:",doble_edad)
+```
+
+4.
+En conclusión, saber poner y cambiar a los tipos de datos correctos es fundamental para definir variables y operar con ellas.

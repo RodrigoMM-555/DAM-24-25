@@ -1,0 +1,14 @@
+
+{
+    "datos personales":{
+        "nombre":"Rodrigo",
+        "apellidos":"Menendez Molina",
+        "email":"menendez.rodrigo555@gmail.com",
+        "edad" : "Edad: 19",
+        "telefono":"Telf: 123456789",
+        "direccion":"Direccion: Mi calle",
+        "codigo_postal":"CP: 51064"
+    },
+    "experiencia":"",
+    "formacion":""
+}

@@ -1,0 +1,25 @@
+Saber usar la libreria matemática es muy útil par amenizar el trabajo con operaciones
+complejas como redondeos, potencias o raíces.
+Especialmente útil es la instanciacion de objetos, por ejemplo
+```
+import math as matematicas
+raiz_cuadrada = matematicas.sqrt
+```
+Con este ejemplo ilustramos el cambio de nombre de la libreria math y la instanciacion de
+objetos que recogen funciones de la libreria math.
+Un ejemplo práctico de esto sería la actividad propuesta:
+```
+import math
+nombre_personaje = "MegaHacker"
+sqrt_objeto = math.sqrt
+print(sqrt_objeto(16))
+nivel_personaje = 15
+pow_objeto = math.pow
+print(pow_objeto(3,2))
+salud_personaje = 200
+sin_objeto = math.sin
+print(sin_objeto(1))
+```
+En conclusión, la instanciacion de objetos y librerías es muy útil para poder identificar de
+forma más intuitiva los diferentes elementos de la libreria. Esto se puede aplicar para dar
+orden a los programas.

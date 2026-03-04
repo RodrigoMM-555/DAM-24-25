@@ -1,0 +1,30 @@
+
+Las constantes son un elemento muy útil a la hora de definir valores que no queremos que cambien en ningún momento durante el desarrollo del programa. En Python no existen las constantes, por lo que como máximo podemos simplemente representarlas.
+
+Para declarar una constante le ponemos un identificador en MAYÚSCULAS diferenciándolas de las variables que se escriben en minúsculas.
+```
+PI=3.14
+temperatura=13
+```
+
+Un ejemplo de su uso sería el propuesto por la actividad:
+```
+#1.Declara la constante
+GRAVEDAD=9.81
+
+#2.Declrar una variable
+masa_objeto=5
+
+#3.Calculo del peso
+peso=masa_objeto*GRAVEDAD
+
+#4.Mostrar el peso por pantalla
+print("El peso del objeto es",round(peso,2))
+```
+
+En conclusión, las constantes son extremadamente útiles para definir valores que vas a usar durante todo el desarrollo de la aplicación o con los que vas a hacer varios cálculos. Por ejemplo, en los videojuegos tu arma hace un daño fijo, pero pude recibir multiplicadores que no cambian el daño original, pero sí lo modifican en el momento de atacar.
+````
+DAÑO=2
+multiplicador=1.3
+daño_ataque=DAÑO*multiplicador
+```

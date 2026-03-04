@@ -1,0 +1,44 @@
+Saber usar la libreria matemática es muy útil par amenizar el trabajo con operaciones
+complejas como redondeos, potencias o raíces.
+Especialmente útil es la instanciacion de objetos, por ejemplo
+
+```
+import math as matematicas
+raiz_cuadrada = matematicas.sqrt
+```
+
+Con este ejemplo ilustramos el cambio de nombre de la libreria math y la instanciacion de
+objetos que recogen funciones de la libreria math.
+Un ejemplo práctico de esto sería la actividad propuesta:
+
+```
+'''
+Rodrigo Menendez Molina
+002/004 Utilización de propiedades
+Calculo de area y volumen de una esfera y circulo
+'''
+
+#1 Importar la libreria
+import math as matematicas
+
+#2
+pi = matematicas.pi
+print(pi)
+
+#3
+radio_circulo = 2
+area = pi*(radio_circulo**2)
+print(area)
+
+#4
+radio_esfera = 2
+def calcular_volumen_esfera(radio_esfera):
+    volumen = (4/3)*pi*(radio_esfera**3)
+    return volumen
+    
+print(calcular_volumen_esfera(radio_esfera))
+```
+
+En conclusión, la instanciacion de objetos y librerías es muy útil para poder identificar de
+forma más intuitiva los diferentes elementos de la libreria. Esto se puede aplicar para dar
+orden a los programas.

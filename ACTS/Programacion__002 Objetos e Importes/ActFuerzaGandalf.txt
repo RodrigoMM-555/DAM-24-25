@@ -1,0 +1,33 @@
+El uso de los elementos de las librerías de Python es una habilidad muy importante. Tanto
+en programación de aplicaciones como en videojuegos, las librerías pueden ahorrar mucho
+trabajo y código. En este caso nos piden que redondeemos el nivel de un personaje, pero
+antes mostrare unos ejemplos de la libreria math.
+Para traer una libreria hay que usar import
+```
+import math
+```
+Además, si queremos podemos cambiarle el nombre a la libreria dentro de nuestro
+programa
+```
+import math as matematicas
+```
+Algunas de las funciones de la libreria math son round, PI o en este caso ceil que redondea
+al alza. El ejemplo que nos propone la actividad usando el comando ceil de la librería math
+sería el siguiente:
+```
+'''
+Rodrigo Menendez Molina
+002/003 Utilización de métodos. Parámetros
+Redondeo hacia arriba de fuerza
+'''
+#1
+import math
+#2
+fuerza_Gandalf = 7.2
+print(fuerza_Gandalf)
+#3
+fuerza_Gandalf = math.ceil(fuerza_Gandalf)
+print(fuerza_Gandalf)
+```
+En conclusión, el uso de librerías puede reducir mucho el tiempo que se gasta a la hora de
+programar y proporcionar soluciones más limpias y rápidas.

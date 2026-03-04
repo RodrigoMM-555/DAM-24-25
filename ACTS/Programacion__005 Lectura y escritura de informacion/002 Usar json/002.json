@@ -1,0 +1,26 @@
+[
+    {
+        "titulo":"Primer articulo",
+        "fecha":"2025-10-16",
+        "autor":"Rodrigo Menendez Molina",
+        "contenido":"Contenido del articulo"
+    },
+    {
+        "titulo":"Segundo articulo",
+        "fecha":"2025-10-16",
+        "autor":"Rodrigo Menendez Molina",
+        "contenido":"Contenido del articulo"
+    },
+    {
+        "titulo":"Tercero articulo",
+        "fecha":"2025-10-16",
+        "autor":"Rodrigo Menendez Molina",
+        "contenido":"Contenido del articulo"
+    },
+    {
+        "titulo":"Cuarto articulo",
+        "fecha":"2025-10-16",
+        "autor":"Rodrigo Menendez Molina",
+        "contenido":"Contenido del articulo"
+    }
+]

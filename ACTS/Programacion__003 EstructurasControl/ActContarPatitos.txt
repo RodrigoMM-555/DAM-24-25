@@ -1,0 +1,28 @@
+Las estructuras for y while se usan para repetir líneas de código hasta que se cumplan una
+serie de condiciones. Esto es muy útil para automatizar conteos o programas que tiene que
+estar todo el rato en funcionamiento. Por ejemplo, el conteo de patitos.
+Un ejemplo del uso de la estructura while sería este:
+````
+while vida==20:
+vivo=True
+````
+Por otro lado, un ejemplo del for sería el propuesto por la actividad:
+```
+'''
+Rodrigo Menendez Molina
+003/002 Estructuras de repeticion
+Contador de patitos
+'''
+total=0
+for año in range(1978,2026):
+for mes in range(1,13):
+for dia in range(1,31):
+total+=10
+print("Dia",dia,"del mes",mes,"del año",año,"se han fabricado 10 patitos de goma")
+print("En total se han fabricado",total,"patitos de goma")
+````
+Un error común con estas estructuras sería el de no colocar los : o no poner el sangrado
+correcto. En el caso concreto del for al usar range() hay que acordarse de que el segundo
+valor en verdad representa uno menos de lo que pone.
+En conclusión, en este ejercicio se ve como usar la estructura for y algo del while de manera
+que podamos repetir tareas hasta llegar a una situación concreta.

@@ -1,0 +1,33 @@
+La estructura assert es similar al try y except, la diferencia es que así como los otros
+funcionan por errores del programa, assert fusiona con cualquier desigualdad o
+incongruencia más que con errores o código no ejecutable.
+Por ejemplo, puede servir como chivato en caso de que un valor sea distinto a lo que se
+espera
+```
+nota=4
+assert nota<4, “Has suspendido”
+```
+Este se puede usar en combinación con el try y except haciendo que si el assert detecta la
+incongruencia avisará al try tratándolo como un error y activando el except.
+Un ejemplo de esto sería la actividad propuesta:
+```
+'''
+Rodrigo Menéndez Molina
+003/005 Aserciones
+Edad y nivel suficiente
+'''
+#1. Declaracion de vaiables y asignacion de valores
+edad = 47
+nivel_jugador = 5
+#2 Aseert
+try:
+assert edad == 48, "Error determinado"
+assert nivel_jugador > 3, "Nivel insuficioente"
+except:
+print("Error")
+```
+En conclusión, assert es como un chivato que nos avisa cuando un valor o línea de código
+no está haciendo lo que debería o lleva un valor incorrecto. Esto no tiene por qué provocar
+un cambio en el curso del programa, a no ser que se use junto a try y ecxcept. En el ámbito
+de videojuegos esto puede ayudar a rastrear errores temprano y evitar dolores de cabeza
+cuando el código sea más complejo

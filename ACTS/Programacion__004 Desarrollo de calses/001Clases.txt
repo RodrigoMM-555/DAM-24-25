@@ -1,0 +1,34 @@
+La creación de clases y objetos es una herramienta muy útil sobre la que están orientados muchos lenguajes de programación. Con estas funciones podemos agrupar objetos en clases haciendo que posean propiedades idénticas.
+
+Para crear una clase y definir sus propiedades usamos el siguiente codigo:
+````
+class = Objetos():
+	def __init__(self):
+		slef.peso = 0
+````
+A la hora de crear clases hay que tener en cuenta una serie de cosas. Primero, se considera buena práctica empezar el nombre de la clase con mayúscula. Y segundo, especificar que tipo de valor debe tener la propiedad, si es entero, cadena de texto, booleano…
+
+El ejercicio propuesto quedaría de la siguiente manera:
+````
+#Creamos la clase
+class Gato():
+    def __init__(self):
+        self.color = ""
+        self.edad = 0
+
+#Combertimos a jagger en un gato y le asignamos unas características
+jagger = Gato()
+jagger.color = "crema"
+jagger.edad = 9
+
+#hacemos lo mismo con lana
+lana = Gato()
+lana.color = "gris"
+lana.edad = 11
+
+#Mostramos sus propiedades por pantalla
+print(jagger.color, jagger.edad)
+print(lana.color, lana.edad)
+````
+
+En conclusión, el uso de clases y objetos es una herramienta muy útil para agrupar objetos que comparten características. En un futuro podremos también añadirles métodos específicos de las clases.
