@@ -1,0 +1,146 @@
+{
+  "carne": [
+    {
+      "nombre": "Pechuga empanada",
+      "momento": 3
+    },
+    {
+      "nombre": "Pollo al horno",
+      "momento": 3
+    },
+    {
+      "nombre": "Guisado de carne",
+      "momento": 1
+    },
+    {
+      "nombre": "Ternera a la plancha",
+      "momento": 2
+    },
+    {
+      "nombre": "Albondigas en salsa",
+      "momento": 1
+    },
+    {
+      "nombre": "Costillas BBQ",
+      "momento": 3
+    },
+    {
+      "nombre": "Solomillo de cerdo",
+      "momento": 2
+    },
+    {
+      "nombre": "Pinchos morunos",
+      "momento": 3
+    },
+    {
+      "nombre": "Filete de ternera",
+      "momento": 2
+    },
+    {
+      "nombre": "Pollo al curry",
+      "momento": 1
+    }
+  ],
+  "pescado": [
+    {
+      "nombre": "Salmon a la plancha",
+      "momento": 2
+    },
+    {
+      "nombre": "Merluza rebozada",
+      "momento": 3
+    },
+    {
+      "nombre": "Atun a la plancha",
+      "momento": 2
+    },
+    {
+      "nombre": "Bacalao al horno",
+      "momento": 1
+    },
+    {
+      "nombre": "Dorada al horno",
+      "momento": 1
+    },
+    {
+      "nombre": "Lubina a la sal",
+      "momento": 1
+    },
+    {
+      "nombre": "Calamares a la romana",
+      "momento": 3
+    },
+    {
+      "nombre": "Pescado en salsa verde",
+      "momento": 1
+    }
+  ],
+  "pasta": [
+    {
+      "nombre": "Espaguetis boloñesa",
+      "momento": 1
+    },
+    {
+      "nombre": "Macarrones con queso",
+      "momento": 3
+    },
+    {
+      "nombre": "Lasaña",
+      "momento": 1
+    },
+    {
+      "nombre": "Carbonara",
+      "momento": 2
+    },
+    {
+      "nombre": "Raviolis",
+      "momento": 2
+    },
+    {
+      "nombre": "Tortellini",
+      "momento": 2
+    },
+    {
+      "nombre": "Pasta con pesto",
+      "momento": 2
+    },
+    {
+      "nombre": "Canelones",
+      "momento": 1
+    }
+  ],
+  "legumbre": [
+    {
+      "nombre": "Lentejas",
+      "momento": 1
+    },
+    {
+      "nombre": "Garbanzos con espinacas",
+      "momento": 1
+    },
+    {
+      "nombre": "Alubias blancas",
+      "momento": 1
+    },
+    {
+      "nombre": "Fabada",
+      "momento": 1
+    },
+    {
+      "nombre": "Potaje de garbanzos",
+      "momento": 1
+    },
+    {
+      "nombre": "Lentejas con chorizo",
+      "momento": 1
+    },
+    {
+      "nombre": "Ensalada de garbanzos",
+      "momento": 2
+    },
+    {
+      "nombre": "Alubias negras",
+      "momento": 1
+    }
+  ]
+}

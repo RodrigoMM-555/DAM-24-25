@@ -7,7 +7,6 @@
     <section class="jocarsacarrusel">
         <div><h1>Hola</h1></div>
         <div><h1>Adios</h1></div>
-        <div><h1>Puede ser</h1></div>
     </section>
     <style>
         .jocarsacarrusel{
@@ -29,19 +28,25 @@
 
         button{
             border:none;
-            background:rgba(255,255,255,0.5);
-            width:60px;
-            height:60px;
-            position:absolute;
-            top:50%;
+            top:0%;
+            background: none;
             border-radius:60px;
             font-size:30px;
             line-height:60px;
             text-align:center;
+            color: #888;
+            transition: color 0.3s, background 1s;
+        }
+
+        button.activo {
+            color: #007bff;
+        }
+
+        button.inactivo {
+            color: #888;
         }
 
         button:hover{
-            background:rgba(255,255,255,1);
             transition:all 1s;
         }
 
@@ -85,15 +90,20 @@
         // Ajustamos el ancho total de la tira según el número de slides
         nuevo_contenedor.style.width = (contenido.length * anchura) + "px";
 
-
         // Ahora creo dos botones
         let botonatras = document.createElement("button");
-        botonatras.textContent = "◀";
+        botonatras.textContent = "Calendario";
+        let botonatrasActivo = true;
         contenedor.appendChild(botonatras);
 
         let botondelante = document.createElement("button");
-        botondelante.textContent = "▶";
+        botondelante.textContent = "Tabla";
+        let botondelanteActivo = false;
         contenedor.appendChild(botondelante);
+
+        // Inicializar clases
+        botonatras.classList.add("activo");
+        botondelante.classList.add("inactivo");
 
         // Índice del slide actual (0 = primero)
         var indiceActual = 0;
@@ -107,16 +117,34 @@
 
         // Click en botón "delante" -> siguiente slide (cíclico)
         botondelante.onclick = function(){
-            // Avanzamos y aplicamos módulo para ciclar
-            indiceActual = (indiceActual + 1) % total;
-            actualizarPosicion();
+            if (botondelanteActivo == false) {
+                // Avanzamos y aplicamos módulo para ciclar
+                indiceActual = (indiceActual + 1) % total;
+                botondelanteActivo = true;
+                botonatrasActivo = false;
+                actualizarPosicion();
+                // Cambiar clases
+                botondelante.classList.remove("inactivo");
+                botondelante.classList.add("activo");
+                botonatras.classList.remove("activo");
+                botonatras.classList.add("inactivo");
+            }
         };
 
         // Click en botón "atrás" -> slide anterior (cíclico)
         botonatras.onclick = function(){
-            // Retrocedemos y sumamos total antes del módulo para evitar negativos
-            indiceActual = (indiceActual - 1 + total) % total;
-            actualizarPosicion();
+            if (botonatrasActivo == false) {
+                // Retrocedemos y sumamos total antes del módulo para evitar negativos
+                indiceActual = (indiceActual - 1 + total) % total;
+                botonatrasActivo = true;
+                botondelanteActivo = false;
+                actualizarPosicion();
+                // Cambiar clases
+                botonatras.classList.remove("inactivo");
+                botonatras.classList.add("activo");
+                botondelante.classList.remove("activo");
+                botondelante.classList.add("inactivo");
+            }
         };
     </script>
   </body>

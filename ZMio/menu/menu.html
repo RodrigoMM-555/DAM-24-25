@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generador de Menús Semanal</title>
+<style>
+    /* Colores para encabezados de tipos de alimentos */
+    .tipo-container.carne { background: #ffe5e5; border-radius: 8px; padding: 6px 12px; }
+    .tipo-container.pescado { background: #e5f0ff; border-radius: 8px; padding: 6px 12px; }
+    .tipo-container.pasta { background: #fffbe5; border-radius: 8px; padding: 6px 12px; }
+    .tipo-container.legumbre { background: #f6ede4; border-radius: 8px; padding: 6px 12px; }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #fafbfc;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+    header { padding: 32px 0 16px 0; text-align: center; }
+    h1 { font-size: 2.2rem; font-weight: 600; margin: 0 0 8px 0; }
+    section { display: flex; gap: 32px; flex-direction: row; max-width: 1300px; margin: 0 auto; padding: 0 16px 32px 16px; }
+    section .menu { flex: 1.5; }
+    article { background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03); padding: 24px 20px 20px 20px; flex: 1; min-width: 320px; }
+    .slider-container {
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    h2 { font-size: 1.2rem; font-weight: 500; margin: 0 0 16px 0; }
+    h3 { margin: 5px 0 5px 0; font-size: 1rem; font-weight: 500; }
+    ul { padding-left: 18px; margin: 0 0 10px 0; list-style: none; }
+    li { display: flex; align-items: center; justify-content: space-between; background: #f7f8fa; border-radius: 6px; padding: 6px 10px; margin-bottom: 7px; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.02); border: 1px solid #ececec; font-size: 0.97rem; }
+    li span { flex: 1; min-width: 0; overflow-wrap: anywhere; white-space: normal; display: block; font-size: 1.01rem; }
+    button { background: #f6f7f9; color: #444; border: 1px solid #d1d5db; border-radius: 5px; padding: 3px 10px; font-size: 0.92rem; cursor: pointer; transition: background 0.13s, border 0.13s, box-shadow 0.13s; margin-left: 4px; margin-right: 2px; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.03); vertical-align: middle; }
+    button:hover { background: #e5e7eb; border-color: #bdbdbd; color: #111; }
+    .tipo-container { margin-bottom: 12px; display: flex; align-content: center; align-items: center; gap: 8px; margin-top: 10px; }
+    input[type="range"] {
+        width: 120px;
+        accent-color: #bdbdbd;
+        margin: 0;
+        vertical-align: middle;
+    }
+    label {
+        font-size: 0.97rem;
+        margin: 0;
+        min-width: 90px;
+    }
+    .cantidades p { margin-top: 10px; font-size: 1rem; font-weight: 500; }
+    .generador button { width: 100%; padding: 10px 0; margin-bottom: 15px; font-size: 1.05rem; background: #4f46e5; color: #fff; border: none; border-radius: 8px; box-shadow: 0 2px 6px 0 rgba(79,70,229,0.3); }
+</style>
+</head>
+<body>
+<header>
+    <h1>Generador de Menús Semanal</h1>
+</header>
+
+<section>
+    <article class="menu"><h2>Menú completo</h2></article>
+    <article class="generador"><button>Generar Menú Semanal</button></article>
+    <article class="cantidades">
+        <h2>Cantidades</h2>
+        <div class="slider-container"><label for="carne">Carne: <span id="valCarne">4</span></label><input type="range" id="carne" min="0" max="14" value="4"></div>
+        <div class="slider-container"><label for="pescado">Pescado: <span id="valPescado">4</span></label><input type="range" id="pescado" min="0" max="14" value="4"></div>
+        <div class="slider-container"><label for="pasta">Pasta: <span id="valPasta">3</span></label><input type="range" id="pasta" min="0" max="14" value="3"></div>
+        <div class="slider-container"><label for="legumbre">Legumbre: <span id="valLegumbre">3</span></label><input type="range" id="legumbre" min="0" max="14" value="3"></div>
+        <p>Total: <span id="total">0</span> / 14</p>
+    </article>
+</section>
+
+<script>
+const maxTotal = 14;
+const sliders = ["carne","pescado","pasta","legumbre"];
+const contenedorMenu = document.querySelector(".menu");
+const contenedorGenerado = document.querySelector(".generador");
+
+function actualizarMaximos() {
+    const valores = sliders.map(id => parseInt(document.getElementById(id).value));
+    const total = valores.reduce((a,b)=>a+b,0);
+    document.getElementById("total").textContent = total;
+    sliders.forEach(id=>{
+        const slider = document.getElementById(id);
+        const valDisplay = document.getElementById("val"+id.charAt(0).toUpperCase()+id.slice(1));
+        valDisplay.textContent = slider.value;
+        slider.max = maxTotal - (total - parseInt(slider.value));
+    });
+}
+sliders.forEach(id=>document.getElementById(id).addEventListener("input", actualizarMaximos));
+actualizarMaximos();
+
+// --- JSON inicial en el propio código ---
+let menuData = JSON.parse(localStorage.getItem("menuData")) || {
+  "carne":[{"nombre":"Pechuga empanada","momento":3},{"nombre":"Pollo al horno","momento":3},{"nombre":"Guisado de carne","momento":1},{"nombre":"Ternera a la plancha","momento":2},{"nombre":"Albondigas en salsa","momento":1},{"nombre":"Costillas BBQ","momento":3},{"nombre":"Solomillo de cerdo","momento":2},{"nombre":"Pinchos morunos","momento":3},{"nombre":"Filete de ternera","momento":2},{"nombre":"Pollo al curry","momento":1}],
+  "pescado":[{"nombre":"Salmon a la plancha","momento":2},{"nombre":"Merluza rebozada","momento":3},{"nombre":"Atun a la plancha","momento":2},{"nombre":"Bacalao al horno","momento":1},{"nombre":"Dorada al horno","momento":1},{"nombre":"Lubina a la sal","momento":1},{"nombre":"Calamares a la romana","momento":3},{"nombre":"Pescado en salsa verde","momento":1}],
+  "pasta":[{"nombre":"Espaguetis boloñesa","momento":1},{"nombre":"Macarrones con queso","momento":3},{"nombre":"Lasaña","momento":1},{"nombre":"Carbonara","momento":2},{"nombre":"Raviolis","momento":2},{"nombre":"Tortellini","momento":2},{"nombre":"Pasta con pesto","momento":2},{"nombre":"Canelones","momento":1}],
+  "legumbre":[{"nombre":"Lentejas","momento":1},{"nombre":"Garbanzos con espinacas","momento":1},{"nombre":"Alubias blancas","momento":1},{"nombre":"Fabada","momento":1},{"nombre":"Potaje de garbanzos","momento":1},{"nombre":"Lentejas con chorizo","momento":1},{"nombre":"Ensalada de garbanzos","momento":2},{"nombre":"Alubias negras","momento":1}]
+};
+
+// --- Función para guardar en localStorage ---
+function guardarMenu() { localStorage.setItem("menuData", JSON.stringify(menuData)); }
+
+// --- Mostrar menú con botones Añadir/Editar/Borrar ---
+function mostrarMenu(menu){
+    contenedorMenu.innerHTML="<h2>Menú completo</h2>";
+    for(const tipo in menu){
+        const tipoDiv=document.createElement("div");
+        tipoDiv.classList.add("tipo-container",tipo);
+        const titulo=document.createElement("h3");
+        titulo.textContent=tipo.charAt(0).toUpperCase()+tipo.slice(1);
+        tipoDiv.appendChild(titulo);
+
+        const btnAñadir=document.createElement("button");
+        btnAñadir.textContent="Añadir";
+        btnAñadir.onclick=()=>{
+            const nombre=prompt(`Nombre del nuevo plato de ${tipo}:`);
+            if(nombre){
+                const momento=parseInt(prompt("Momento: 1=Comida, 2=Cena, 3=Ambos","1"));
+                menuData[tipo].push({nombre,momento});
+                guardarMenu();
+                mostrarMenu(menuData);
+            }
+        };
+        tipoDiv.appendChild(btnAñadir);
+        contenedorMenu.appendChild(tipoDiv);
+
+        const ul=document.createElement("ul");
+        menu[tipo].forEach((item,idx)=>{
+            const li=document.createElement("li");
+            const span=document.createElement("span");
+            const momentoTexto = item.momento===1?"Comida":item.momento===2?"Cena":"Ambos";
+            span.textContent=`${item.nombre} (${momentoTexto})`;
+            li.appendChild(span);
+
+            const btnEditar=document.createElement("button");
+            btnEditar.textContent="Editar";
+            btnEditar.onclick=()=>{
+                const nuevoNombre=prompt("Nuevo nombre:",item.nombre);
+                if(nuevoNombre)item.nombre=nuevoNombre;
+                const nuevoMomento=parseInt(prompt("Nuevo momento: 1=Comida,2=Cena,3=Ambos",item.momento));
+                if([1,2,3].includes(nuevoMomento))item.momento=nuevoMomento;
+                guardarMenu();
+                mostrarMenu(menuData);
+            };
+            const btnBorrar=document.createElement("button");
+            btnBorrar.textContent="Borrar";
+            btnBorrar.onclick=()=>{
+                if(confirm(`¿Eliminar ${item.nombre}?`)){
+                    menuData[tipo].splice(idx,1);
+                    guardarMenu();
+                    mostrarMenu(menuData);
+                }
+            };
+            li.appendChild(btnEditar);
+            li.appendChild(btnBorrar);
+            ul.appendChild(li);
+        });
+        contenedorMenu.appendChild(ul);
+    }
+}
+
+mostrarMenu(menuData);
+
+// --- Funciones menú semanal ---
+function elegirAleatorio(array,n){
+    const copia=[...array],seleccion=[];
+    for(let i=0;i<n&&copia.length>0;i++){
+        const idx=Math.floor(Math.random()*copia.length);
+        seleccion.push(copia.splice(idx,1)[0]);
+    }
+    return seleccion;
+}
+
+function repartirTiposSemanal(){
+    const cantidadCarne=parseInt(document.getElementById("carne").value);
+    const cantidadPescado=parseInt(document.getElementById("pescado").value);
+    const cantidadPasta=parseInt(document.getElementById("pasta").value);
+    const cantidadLegumbre=parseInt(document.getElementById("legumbre").value);
+    let tipos=[];
+    for(let i=0;i<cantidadCarne;i++)tipos.push("carne");
+    for(let i=0;i<cantidadPescado;i++)tipos.push("pescado");
+    for(let i=0;i<cantidadPasta;i++)tipos.push("pasta");
+    for(let i=0;i<cantidadLegumbre;i++)tipos.push("legumbre");
+    for(let i=tipos.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [tipos[i],tipos[j]]=[tipos[j],tipos[i]];
+    }
+    return tipos;
+}
+
+function generarMenuSemanal(){
+    if(!menuData||Object.keys(menuData).length===0)return;
+    const tiposSemanal=repartirTiposSemanal();
+    let resultado="<h2>Menú Semanal</h2>";
+    for(let dia=0;dia<7;dia++){
+        resultado+=`<h3>Día ${dia+1}</h3><ul>`;
+        for(let comida=0;comida<2;comida++){
+            const tipo=tiposSemanal[dia*2+comida];
+            const seleccion=elegirAleatorio(menuData[tipo],1)[0];
+            resultado+=`<li>${comida===0?"Comida":"Cena"}: ${seleccion.nombre} (${tipo})</li>`;
+        }
+        resultado+="</ul>";
+    }
+    contenedorGenerado.innerHTML=`<button>Generar Menú Semanal</button>`+resultado;
+    contenedorGenerado.querySelector("button").addEventListener("click", generarMenuSemanal);
+}
+
+contenedorGenerado.querySelector("button").addEventListener("click", generarMenuSemanal);
+
+</script>
+</body>
+</html>
